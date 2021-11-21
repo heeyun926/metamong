@@ -4,6 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/gpc/AndroidStudioProjects/firstapp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.25925925925925924" />
+        <entry key="..\:/Users/gpc/AndroidStudioProjects/firstapp/app/src/main/res/drawable/ic_btn_select.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/gpc/AndroidStudioProjects/firstapp/app/src/main/res/drawable/ic_btn_select_01.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/gpc/AndroidStudioProjects/firstapp/app/src/main/res/drawable/ic_btn_select_02.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/gpc/AndroidStudioProjects/firstapp/app/src/main/res/drawable/radio_button.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/gpc/AndroidStudioProjects/firstapp/app/src/main/res/drawable/selector_radio_text.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/gpc/AndroidStudioProjects/firstapp/app/src/main/res/layout/activity_main.xml" value="0.22" />
       </map>
     </option>
   </component>
