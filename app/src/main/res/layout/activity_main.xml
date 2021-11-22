@@ -41,7 +41,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.442"
-        app:srcCompat="@drawable/talk" />
+        app:srcCompat="@drawable/selector_radio_image_2" />
+
 
     <ImageView
         android:id="@+id/pencil"
@@ -50,13 +51,11 @@
         android:layout_marginStart="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/talk"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.032"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.442"
-        app:srcCompat="@drawable/pencil" />
-
-
+        app:srcCompat="@drawable/selector_radio_image" />
 
     <RadioGroup
         android:id="@+id/radioGroup1"
