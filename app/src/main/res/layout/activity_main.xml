@@ -74,6 +74,7 @@
             android:background="@drawable/selcector_radio_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+
             android:layout_marginRight="80dp"
             android:text="글을 통해서"
             android:textColor="@drawable/selector_radio_text"
