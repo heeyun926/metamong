@@ -4,6 +4,6 @@
         android:drawable="@drawable/talk"/>
 
     <item android:state_checked="false"
-        android:drawable="@drawable/noselect_talk"/>
+        android:drawable="@drawable/untalk"/>
 
 </selector>

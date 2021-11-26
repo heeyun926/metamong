@@ -4,6 +4,6 @@
         android:drawable="@drawable/pencil"/>
 
     <item android:state_checked="false"
-        android:drawable="@drawable/noselect_pencil"/>
+        android:drawable="@drawable/unpencil"/>
 
 </selector>
