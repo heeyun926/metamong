@@ -1,14 +1,13 @@
-package com.example.firstapp
+package com.example.metamong
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.firstapp.databinding.ActivityResultBinding
-import com.example.firstapp.databinding.ItemMetamongresultBinding
+import com.example.metamong.databinding.ActivityResultBinding
+import com.example.metamong.databinding.ItemMetamongresultBinding
 
 class ResultActivity : AppCompatActivity() {
 

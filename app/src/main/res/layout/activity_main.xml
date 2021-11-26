@@ -13,10 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="56dp"
-        android:layout_marginEnd="308dp"
+        android:layout_marginEnd="288dp"
         android:text="meta, mong"
-        android:textStyle="bold"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,9 +28,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:text="1.생각을 표현할 때 \n    주로 어떤 방법을 사용하시나요?"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo"
-        android:textSize="18sp" />
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <ImageView
         android:id="@+id/talk"
