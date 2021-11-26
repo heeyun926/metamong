@@ -1,9 +1,9 @@
-package com.example.firstapp
+package com.example.metamong
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.firstapp.databinding.ActivityMainBinding
+import com.example.metamong.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
