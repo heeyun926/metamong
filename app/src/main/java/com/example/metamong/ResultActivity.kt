@@ -1,6 +1,7 @@
 package com.example.metamong
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -24,7 +25,14 @@ class ResultActivity : AppCompatActivity() {
         profileAdapter.datas =data
         binding.metamongResult.adapter = profileAdapter
 
+        binding.btnMain.setOnClickListener{
+            val intent = Intent (this,HomeActivity::class.java)
+            startActivity(intent)
+        }
+
     }
+
+
 
     fun loadData(): MutableList<ProfileData> {
         val list = mutableListOf<ProfileData>()
@@ -56,6 +64,8 @@ class ProfileAdapter: RecyclerView.Adapter<ProfileAdapter.Holder>(){
     inner class Holder(val binding: ItemMetamongresultBinding): RecyclerView.ViewHolder(binding.root){
         fun setProfiles(data: ProfileData){
             binding.contenMain.setImageDrawable(data.image)
+            binding.contentName.text = data.name
+            binding.contentTag.text = data.tag
         }
     }
 }
