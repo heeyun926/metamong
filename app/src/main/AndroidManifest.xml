@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".HomeActivity"
+            android:name=".fragment.HomeActivity_Sub"
+            android:exported="false" />
+        <activity
+            android:name=".NotWork.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".ResultActivity"
