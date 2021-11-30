@@ -6,31 +6,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.metamong.R
+import com.example.metamong.databinding.FragmentHomeBinding
+import com.example.metamong.databinding.FragmentMissionBinding
 
 class MissionFragment : Fragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-
-        }
-    }
+    private var binding : FragmentMissionBinding? = null
 
     override fun onCreateView(
+
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mission, container, false)
+        val mBinding = FragmentMissionBinding.inflate(inflater,container,false)
+        binding = mBinding
+        return binding?.root
     }
 
-    companion object {
-
-        fun newInstance(param1: String, param2: String) =
-            MissionFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
+    override fun onDestroyView() {
+        binding =null
+        super.onDestroyView()
     }
 }

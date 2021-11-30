@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.metamong.databinding.ActivityResultBinding
 import com.example.metamong.databinding.ItemMetamongresultBinding
+import com.example.metamong.fragment.CloudFragment
+import com.example.metamong.fragment.HomeActivity_Sub
 
 class ResultActivity : AppCompatActivity() {
 
@@ -26,7 +28,7 @@ class ResultActivity : AppCompatActivity() {
         binding.metamongResult.adapter = profileAdapter
 
         binding.btnMain.setOnClickListener{
-            val intent = Intent (this,HomeActivity::class.java)
+            val intent = Intent (this,HomeActivity_Sub::class.java)
             startActivity(intent)
         }
 

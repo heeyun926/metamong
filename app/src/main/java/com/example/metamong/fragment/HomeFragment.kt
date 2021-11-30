@@ -5,33 +5,31 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentContainer
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.example.metamong.R
+import com.example.metamong.databinding.FragmentCloudBinding
+import com.example.metamong.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-
-        }
-    }
+    private var binding: FragmentHomeBinding? = null
 
     override fun onCreateView(
+
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val mBinding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding = mBinding
+        return binding?.root
     }
 
-    companion object {
-
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
+    override fun onDestroyView() {
+        binding = null
+        super.onDestroyView()
     }
 }
