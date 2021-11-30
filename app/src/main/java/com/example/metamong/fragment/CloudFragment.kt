@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.metamong.R
 import com.example.metamong.databinding.FragmentCloudBinding
-import com.example.metamong.databinding.FragmentHomeBinding
 
 class CloudFragment : Fragment() {
     private var binding : FragmentCloudBinding? = null
