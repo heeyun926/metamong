@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.metamong.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_cloudFragment2"
+            app:destination="@id/cloudFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cloudFragment"
+        android:name="com.example.metamong.fragment.CloudFragment"
+        android:label="fragment_cloud"
+        tools:layout="@layout/fragment_cloud" >
+        <action
+            android:id="@+id/action_cloudFragment_to_missionFragment2"
+            app:destination="@id/missionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/missionFragment"
+        android:name="com.example.metamong.fragment.MissionFragment"
+        android:label="fragment_mission"
+        tools:layout="@layout/fragment_mission" >
+        <action
+            android:id="@+id/action_missionFragment_to_mypageFragment"
+            app:destination="@id/mypageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mypageFragment"
+        android:name="com.example.metamong.fragment.MypageFragment"
+        android:label="fragment_mypage"
+        tools:layout="@layout/fragment_mypage" />
+</navigation>

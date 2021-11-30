@@ -6,32 +6,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.metamong.R
+import com.example.metamong.databinding.FragmentCloudBinding
 
 class CloudFragment : Fragment() {
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-
-        }
-    }
+    private var binding : FragmentCloudBinding? = null
 
     override fun onCreateView(
+
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cloud, container, false)
+        val mBinding =FragmentCloudBinding.inflate(inflater,container,false)
+        binding = mBinding
+        return binding?.root
     }
 
-    companion object {
-
-        fun newInstance(param1: String, param2: String) =
-            CloudFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
+    override fun onDestroyView() {
+        binding =null
+        super.onDestroyView()
     }
 }
