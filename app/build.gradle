@@ -43,12 +43,6 @@ android {
         viewBinding true
         dataBinding true
     }
-    externalNativeBuild {
-        cmake {
-            path file('src/main/cpp/CMakeLists.txt')
-            version '3.10.2'
-        }
-    }
 }
 
 dependencies {
@@ -75,7 +69,7 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     implementation "androidx.navigation:navigation-compose:2.4.0-beta02"
-
+    implementation 'com.fxn769:ariana:1.0'
 
 
 }
