@@ -21,7 +21,7 @@
             android:name=".MemoActivity"
             android:exported="false" />
         <activity
-            android:name=".fragment.HomeActivity_Sub"
+            android:name=".HomeActivity_Sub"
             android:exported="false" />
         <activity
             android:name=".ResultActivity"

@@ -1,5 +1,6 @@
 package com.example.metamong
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import com.example.metamong.databinding.ActivityMainBinding
 import com.example.metamong.databinding.ActivityMemoBinding
 import com.example.metamong.databinding.ItemMetamongresultBinding
 import com.example.metamong.databinding.ItemRecyclermemoBinding
+import com.example.metamong.fragment.HomeFragment
 import java.text.SimpleDateFormat
 
 class MemoActivity : AppCompatActivity() {
@@ -32,9 +34,9 @@ class MemoActivity : AppCompatActivity() {
         binding.recyclerMemo.adapter =adapter
         binding.recyclerMemo.layoutManager = LinearLayoutManager(this)
         //memo insert
-        binding.btnAdd.setOnClickListener{
-            if(binding.editMemo.text.toString().isNotEmpty()){
-                val memo = Memo(null,binding.editMemo.text.toString(),System.currentTimeMillis())
+        binding.btnAdd.setOnClickListener {
+            if (binding.editMemo.text.toString().isNotEmpty()) {
+                val memo = Memo(null, binding.editMemo.text.toString(), System.currentTimeMillis())
                 helper.insertMemo(memo)
                 adapter.listData.clear()
                 adapter.listData.addAll(helper.selectMemo())
@@ -42,8 +44,13 @@ class MemoActivity : AppCompatActivity() {
 
                 binding.editMemo.setText("")
             }
+        }
+        binding.btnSave.setOnClickListener{
+            Intent(this, HomeActivity_Sub::class.java)
+            finish()
+        }
     }
-}}
+}
 
 
 class MemoAdapter: RecyclerView.Adapter<MemoAdapter.Holder>(){
