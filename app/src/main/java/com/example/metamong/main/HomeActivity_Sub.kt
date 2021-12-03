@@ -1,13 +1,12 @@
-package com.example.metamong
+package com.example.metamong.main
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import com.example.metamong.R
 import com.example.metamong.databinding.ActivityHomeSubBinding
-import kotlin.system.exitProcess
 
 class HomeActivity_Sub : AppCompatActivity() {
     private lateinit var binding: ActivityHomeSubBinding
@@ -17,6 +16,7 @@ class HomeActivity_Sub : AppCompatActivity() {
         // home_sub에 inflate binding
         binding = ActivityHomeSubBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
        //Navigation Fragment 생성
         val navigationFragment : NavHostFragment? =supportFragmentManager.findFragmentById(R.id.main_nav_host) as NavHostFragment

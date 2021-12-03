@@ -15,13 +15,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".ResultDatailActivity"
+            android:exported="false" />
+        <activity
             android:name=".MemoMainActivity"
             android:exported="false" />
         <activity
             android:name=".MemoActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity_Sub"
+            android:name=".main.HomeActivity_Sub"
             android:exported="false" />
         <activity
             android:name=".ResultActivity"
