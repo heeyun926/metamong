@@ -7,11 +7,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.metamong.databinding.ActivityMainBinding
 import com.example.metamong.databinding.ActivityMemoBinding
-import com.example.metamong.databinding.ItemMetamongresultBinding
 import com.example.metamong.databinding.ItemRecyclermemoBinding
-import com.example.metamong.fragment.HomeFragment
+import com.example.metamong.main.HomeActivity_Sub
 import java.text.SimpleDateFormat
 
 class MemoActivity : AppCompatActivity() {
