@@ -26,25 +26,31 @@
         <entry key="app/src/main/res/drawable/ic_chat.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable/ic_looktalk_bg.xml" value="0.2587962962962963" />
         <entry key="app/src/main/res/drawable/ic_main_share.xml" value="0.309375" />
+        <entry key="app/src/main/res/drawable/ic_mission_little_ing.xml" value="0.2564814814814815" />
+        <entry key="app/src/main/res/drawable/ic_misson_bg.xml" value="0.2564814814814815" />
+        <entry key="app/src/main/res/drawable/ic_search_box.xml" value="0.2564814814814815" />
         <entry key="app/src/main/res/drawable/ic_sharemong_text_bg.xml" value="0.309375" />
         <entry key="app/src/main/res/drawable/main_home_box.xml" value="0.2587962962962963" />
         <entry key="app/src/main/res/drawable/selcector_radio_button.xml" value="0.2640625" />
         <entry key="app/src/main/res/drawable/selector_radio_image.xml" value="0.2640625" />
         <entry key="app/src/main/res/drawable/selector_radio_image_2.xml" value="0.2640625" />
         <entry key="app/src/main/res/drawable/selector_radio_text.xml" value="0.2640625" />
+        <entry key="app/src/main/res/layout-v26/item_recycler_mission_ing.xml" value="0.2984375" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_home_sub.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24791666666666667" />
         <entry key="app/src/main/res/layout/activity_memo.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_memo_main.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_mission_ing.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_result.xml" value="0.2832080200501253" />
         <entry key="app/src/main/res/layout/activity_result_datail.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/fragment_cloud.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_cloud.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_mission.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_mypage.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_metamongresult.xml" value="0.335" />
         <entry key="app/src/main/res/layout/item_recycler_looktalk.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/item_recycler_mission_ing.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_recycler_sharemong.xml" value="0.26625386996904027" />
         <entry key="app/src/main/res/layout/item_recyclermemo.xml" value="0.335" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.32314814814814813" />

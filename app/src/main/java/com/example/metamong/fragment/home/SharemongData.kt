@@ -1,4 +1,4 @@
-package com.example.metamong.fragment
+package com.example.metamong.fragment.home
 
 data class SharemongData(val character : Int,
                          val background : Int,

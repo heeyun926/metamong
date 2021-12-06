@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.metamong.fragment.HomeFragment"
+        android:name="com.example.metamong.fragment.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/missionFragment"
-        android:name="com.example.metamong.fragment.MissionFragment"
+        android:name="com.example.metamong.fragment.mission.MissionFragment"
         android:label="fragment_mission"
         tools:layout="@layout/fragment_mission" >
         <action

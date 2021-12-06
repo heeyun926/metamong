@@ -1,18 +1,19 @@
-package com.example.metamong.fragment
+package com.example.metamong.main
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.metamong.databinding.ItemRecyclerSharemongBinding
 
-class SharemongAdapter() : RecyclerView.Adapter<SharemongAdapter.Holder>(){
+class SharemongAdapter(val context:Context): RecyclerView.Adapter<SharemongAdapter.Holder>(){
     var sharemong = mutableListOf<SharemongData>()
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SharemongAdapter.Holder {
         val binding = ItemRecyclerSharemongBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return Holder(binding)
     }
 
-    override fun onBindViewHolder(holder: Holder, position: Int) {
+    override fun onBindViewHolder(holder: SharemongAdapter.Holder, position: Int) {
         val sharemongdata = sharemong[position]
         holder.setSharemongs(sharemongdata)
     }

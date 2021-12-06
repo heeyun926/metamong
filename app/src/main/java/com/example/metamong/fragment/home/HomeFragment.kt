@@ -1,4 +1,4 @@
-package com.example.metamong.fragment
+package com.example.metamong.fragment.home
 
 
 import android.content.Intent
@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.metamong.MemoActivity
 import com.example.metamong.R
 import com.example.metamong.databinding.FragmentHomeBinding
+
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -53,8 +54,8 @@ class HomeFragment : Fragment() {
             return binding.root
         }
 
-        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-            super.onViewCreated(view, savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
             binding.btnChat.setOnClickListener{
                 val intent = Intent(context, MemoActivity::class.java)
