@@ -3,12 +3,11 @@ package com.example.metamong
 import android.Manifest
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
-import androidx.constraintlayout.compose.override
+import com.example.metamong.notworked.BaseActivity
 import com.example.metamong.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity() {
