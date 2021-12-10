@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/mypageFragment"
-        android:name="com.example.metamong.fragment.MypageFragment"
+        android:name="com.example.metamong.fragment.mypage.MypageFragment"
         android:label="fragment_mypage"
         tools:layout="@layout/fragment_mypage" />
 </navigation>

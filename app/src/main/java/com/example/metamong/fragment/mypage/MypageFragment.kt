@@ -1,4 +1,4 @@
-package com.example.metamong.fragment
+package com.example.metamong.fragment.mypage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,6 +11,9 @@ import com.example.metamong.databinding.FragmentMypageBinding
 class MypageFragment: Fragment() {
     private var binding : FragmentMypageBinding? = null
 
+    fun loadData(){
+
+    }
     override fun onCreateView(
 
         inflater: LayoutInflater, container: ViewGroup?,

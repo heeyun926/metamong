@@ -1,4 +1,4 @@
-package com.example.metamong.memodb
+package com.example.metamong.notworked.memodb
 
 import android.content.Context
 import android.view.LayoutInflater

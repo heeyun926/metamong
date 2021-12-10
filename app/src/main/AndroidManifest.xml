@@ -15,16 +15,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".fragment.mypage.MongsAddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".fragment.mypage.MongsActivity"
+            android:exported="false" />
+        <activity
             android:name=".MissionIngActivity"
             android:exported="false" />
         <activity
             android:name=".ResultDatailActivity"
             android:exported="false" />
         <activity
-            android:name=".memodb.MemoMainActivity"
+            android:name=".notworked.memodb.MemoMainActivity"
             android:exported="false" />
         <activity
-            android:name=".memodb.MemoActivity"
+            android:name=".notworked.memodb.MemoActivity"
             android:exported="false" />
         <activity
             android:name=".main.HomeActivity_Sub"

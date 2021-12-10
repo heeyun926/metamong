@@ -9,7 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.metamong.memodb.MemoActivity
+import com.example.metamong.notworked.memodb.MemoActivity
 import com.example.metamong.R
 import com.example.metamong.databinding.FragmentHomeBinding
 
@@ -58,10 +58,10 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-            binding.btnChat.setOnClickListener{
-                val intent = Intent(context, MemoActivity::class.java)
-                startActivity(intent)
-            }
+//            binding.btnChat.setOnClickListener{
+//                val intent = Intent(context, MemoActivity::class.java)
+//                startActivity(intent)
+//            }
             val data : MutableList<SharemongData> = loadData()
             val sharemongAdapter = context?.let { SharemongAdapter() }
             sharemongAdapter?.sharemong = data

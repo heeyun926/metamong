@@ -1,4 +1,4 @@
-package com.example.metamong.memodb
+package com.example.metamong.notworked.memodb
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
