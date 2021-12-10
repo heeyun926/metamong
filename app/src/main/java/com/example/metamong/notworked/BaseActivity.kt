@@ -1,11 +1,12 @@
-package com.example.metamong
+package com.example.metamong.notworked
 
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import java.security.Permissions
 
+
+//SQLite Used
 abstract class BaseActivity: AppCompatActivity(){
     abstract fun permissionGranted(requestCode:Int)
     abstract fun permissionDenied(requestCode: Int)

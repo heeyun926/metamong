@@ -9,9 +9,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.metamong.MemoActivity
+import com.example.metamong.memodb.MemoActivity
 import com.example.metamong.R
 import com.example.metamong.databinding.FragmentHomeBinding
+
 
 
 class HomeFragment : Fragment() {

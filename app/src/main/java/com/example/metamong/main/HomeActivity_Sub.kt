@@ -3,6 +3,7 @@ package com.example.metamong.main
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.example.metamong.R
@@ -17,8 +18,7 @@ class HomeActivity_Sub : AppCompatActivity() {
         binding = ActivityHomeSubBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-       //Navigation Fragment 생성
+        //Navigation Fragment 생성
         val navigationFragment : NavHostFragment? =supportFragmentManager.findFragmentById(R.id.main_nav_host) as NavHostFragment
         //Navigation Controller 생성
         val navController = navigationFragment?.navController
