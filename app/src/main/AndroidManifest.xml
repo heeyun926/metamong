@@ -21,10 +21,10 @@
             android:name=".ResultDatailActivity"
             android:exported="false" />
         <activity
-            android:name=".MemoMainActivity"
+            android:name=".memodb.MemoMainActivity"
             android:exported="false" />
         <activity
-            android:name=".MemoActivity"
+            android:name=".memodb.MemoActivity"
             android:exported="false" />
         <activity
             android:name=".main.HomeActivity_Sub"
