@@ -20,8 +20,8 @@ class MemoActivity : AppCompatActivity() {
 
         db = MemoDatabase.getInstance(this)!!
         binding.btnSave.setOnClickListener {
-            val memo = RoomMemo(null, binding.editMemo.text.toString())
-            insertMemo(memo)
+            //val memo = RoomMemo(null, binding.editMemo.text.toString())
+            //insertMemo(memo)
         }
     }
 
