@@ -8,7 +8,7 @@ import com.example.metamong.databinding.ItemRecyclerMongsmemoBinding
 import java.util.zip.Inflater
 
 class MongsAdapter() : RecyclerView.Adapter<MongsAdapter.Holder>() {
-    val mongsMemo = mutableListOf<MongsData>()
+    var mongsMemo = mutableListOf<MongsData>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding = ItemRecyclerMongsmemoBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return Holder(binding)
