@@ -10,6 +10,7 @@ abstract class MemoDB : RoomDatabase(){
     abstract fun memoDao(): MemoDao
 
     companion object {
+        @Volatile
         private var instance: MemoDB? = null
 
         fun getInstance(context: MypageFragment): MemoDB?{

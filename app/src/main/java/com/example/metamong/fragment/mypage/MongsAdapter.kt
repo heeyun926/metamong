@@ -4,10 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.metamong.databinding.ItemRecyclerMongsmemoBinding
+import com.example.metamong.fragment.mypage.DB.Memo
 
-import java.util.zip.Inflater
-
-class MongsAdapter() : RecyclerView.Adapter<MongsAdapter.Holder>() {
+class MongsAdapter(val context: MypageFragment, val memos: List<Memo>) : RecyclerView.Adapter<MongsAdapter.Holder>() {
     var mongsMemo = mutableListOf<MongsData>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding = ItemRecyclerMongsmemoBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -15,20 +14,19 @@ class MongsAdapter() : RecyclerView.Adapter<MongsAdapter.Holder>() {
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        val mongsData = mongsMemo[position]
-        holder.setMongs(mongsData)
+        holder.setMongs(memos[position])
     }
 
-    override fun getItemCount() = mongsMemo.size
+    override fun getItemCount() = memos.size
 
     class Holder (val binding:ItemRecyclerMongsmemoBinding): RecyclerView.ViewHolder(binding.root){
-        fun setMongs(data : MongsData) {
+        fun setMongs(data : Memo) {
             with(binding){
-                mongsBg.setImageResource(data.bg)
-                mongsContentBg.setImageResource(data.contentBg)
-                mongsimageBg.setImageResource(data.imgBg)
-                mongsTitle.text = data.title
-                mongsContent.text = data.content
+                mongsBg.setImageResource(data.memoBg)
+                mongsContentBg.setImageResource(data.memoContentBg)
+                mongsimageBg.setImageResource(data.memoImgBg)
+                mongsTitle.text = data.memoTitle
+                mongsContent.text = data.memoContent
             }
         }
     }
