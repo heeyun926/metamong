@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.metamong.R
 import com.example.metamong.databinding.FragmentMypageBinding
+import com.example.metamong.fragment.mypage.DB.MemoDB
 
 class MypageFragment: Fragment() {
     private var binding : FragmentMypageBinding? = null
+    private var memoDB : MemoDB? = null
 
     fun loadData(): MutableList<MongsData> {
         val list = mutableListOf<MongsData>()
@@ -38,6 +40,15 @@ class MypageFragment: Fragment() {
         // Inflate the layout for this fragment
         val mBinding = FragmentMypageBinding.inflate(inflater,container,false)
         binding = mBinding
+
+        //room getInstance
+        memoDB = MemoDB.getInstance(this)
+        val r = Runnable {
+
+        }
+        val thread = Thread(r)
+        thread.start()
+
         return binding?.root
     }
 
@@ -45,8 +56,9 @@ class MypageFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val data : MutableList<MongsData> = loadData()
-        var mongsAdapter = context?.let{MongsAdapter()}
+        val mongsAdapter = context?.let{MongsAdapter()}
         mongsAdapter?.mongsMemo = data
+        binding?.recyclerMongs?.adapter = mongsAdapter
     }
 
     override fun onDestroyView() {
