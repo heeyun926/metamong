@@ -81,7 +81,7 @@ import com.example.metamong.fragment.mypage.DB.MemoDB
         super.onViewCreated(view, savedInstanceState)
 
         //room getInstance
-        memoDB = MemoDB.getInstance(context)
+        memoDB = context?.let { MemoDB.getInstance(it) }
         val r = Runnable {
             memolist = memoDB?.memoDao()?.getAll()!!
         }
