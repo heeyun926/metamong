@@ -1,9 +1,9 @@
 package com.example.metamong.fragment.mypage.DB
 
+import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.metamong.fragment.mypage.MypageFragment
 
 @Database(entities = [Memo::class], version = 1)
 abstract class MemoDB : RoomDatabase(){
@@ -13,10 +13,10 @@ abstract class MemoDB : RoomDatabase(){
         @Volatile
         private var instance: MemoDB? = null
 
-        fun getInstance(context: MypageFragment): MemoDB?{
+        fun getInstance(context: Context?): MemoDB?{
             if(instance == null) {
                 synchronized(MemoDB::class){
-                    instance = Room.databaseBuilder(context.applicationContext,
+                    instance = Room.databaseBuilder(context!!.applicationContext,
                     MemoDB::class.java,"memo.db")
                         .fallbackToDestructiveMigration()
                         .build()

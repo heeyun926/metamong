@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.metamong.databinding.ItemRecyclerMongsmemoBinding
 import com.example.metamong.fragment.mypage.DB.Memo
 
-class MongsAdapter(val context: MypageFragment, val memos: List<Memo>) : RecyclerView.Adapter<MongsAdapter.Holder>() {
+class MongsAdapter(val context: MypageFragment, private val memos: List<Memo>) : RecyclerView.Adapter<MongsAdapter.Holder>() {
     var mongsMemo = mutableListOf<MongsData>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding = ItemRecyclerMongsmemoBinding.inflate(LayoutInflater.from(parent.context),parent,false)

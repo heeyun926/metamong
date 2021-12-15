@@ -14,10 +14,22 @@ import com.example.metamong.fragment.mypage.DB.Memo
 import com.example.metamong.fragment.mypage.DB.MemoDB
 
 
-abstract class MypageFragment() : Fragment(), List<Memo> {
+
+ class MypageFragment() : Fragment(){
     private var binding: FragmentMypageBinding? = null
     private var memoDB: MemoDB? = null
     private var memolist = listOf<Memo>()
+
+    companion object {
+        fun newInstance(): MypageFragment {
+            val fragment = MypageFragment()
+            val args = Bundle()
+            args.putInt("test", 1)
+            fragment.arguments = args
+
+            return fragment
+        }
+    }
 
     fun loadData(): MutableList<MongsData> {
         val list = mutableListOf<MongsData>()
@@ -69,7 +81,7 @@ abstract class MypageFragment() : Fragment(), List<Memo> {
         super.onViewCreated(view, savedInstanceState)
 
         //room getInstance
-        memoDB = MemoDB.getInstance(this)
+        memoDB = MemoDB.getInstance(context)
         val r = Runnable {
             memolist = memoDB?.memoDao()?.getAll()!!
         }
@@ -95,5 +107,6 @@ abstract class MypageFragment() : Fragment(), List<Memo> {
         binding = null
         super.onDestroyView()
     }
+
 }
 
