@@ -3,13 +3,17 @@ package com.example.metamong.fragment.mypage
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.metamong.R
 import com.example.metamong.databinding.FragmentMypageBinding
+import com.example.metamong.fragment.home.SharemongAdapter
+import com.example.metamong.fragment.home.SharemongData
 import com.example.metamong.fragment.mypage.DB.Memo
 import com.example.metamong.fragment.mypage.DB.MemoDB
 
@@ -31,37 +35,6 @@ import com.example.metamong.fragment.mypage.DB.MemoDB
         }
     }
 
-    fun loadData(): MutableList<MongsData> {
-        val list = mutableListOf<MongsData>()
-        with(list) {
-            add(
-                MongsData(
-                    R.drawable.ic_mongsmemo_bg,
-                    R.drawable.ic_sharemong_text_bg,
-                    R.drawable.ic_mongsmemo_image_bg,
-                    "uxui designer", "진로페어 미션 수행중"
-                )
-            )
-            add(
-                MongsData(
-                    R.drawable.ic_mongsmemo_bg,
-                    R.drawable.ic_sharemong_text_bg,
-                    R.drawable.ic_mongsmemo_image_bg,
-                    "uxui designer", "진로페어 미션 수행중"
-                )
-            )
-            add(
-                MongsData(
-                    R.drawable.ic_mongsmemo_bg,
-                    R.drawable.ic_sharemong_text_bg,
-                    R.drawable.ic_mongsmemo_image_bg,
-                    "uxui designer", "진로페어 미션 수행중"
-                )
-            )
-        }
-        return list
-    }
-
     override fun onCreateView(
 
         inflater: LayoutInflater, container: ViewGroup?,
@@ -70,9 +43,6 @@ import com.example.metamong.fragment.mypage.DB.MemoDB
         // Inflate the layout for this fragment
         val mBinding = FragmentMypageBinding.inflate(inflater, container, false)
         binding = mBinding
-
-
-
         return binding?.root
     }
 
@@ -80,27 +50,11 @@ import com.example.metamong.fragment.mypage.DB.MemoDB
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //room getInstance
-        memoDB = context?.let { MemoDB.getInstance(it) }
-        val r = Runnable {
-            memolist = memoDB?.memoDao()?.getAll()!!
-        }
-        val thread = Thread(r)
-        thread.start()
+        binding?.btnAddMemo?.setOnClickListener{
+               val intent = Intent(context, MongsActivity::class.java)
+               startActivity(intent)
+            }
 
-        //data.binding
-        val mAdapter = MongsAdapter(this, memolist)
-        mAdapter.notifyDataSetChanged()
-        with(binding) {
-            this!!.recyclerMongs.adapter = mAdapter
-            recyclerMongs.layoutManager = LinearLayoutManager(context)
-            recyclerMongs.setHasFixedSize(true)
-        }
-
-        binding?.btnAddMemo?.setOnClickListener {
-            val intent = Intent(context, MongsAddActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     override fun onDestroyView() {

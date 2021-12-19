@@ -1,34 +1,46 @@
 package com.example.metamong.fragment.mypage
 
+
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.metamong.databinding.ItemRecyclerMongsmemoBinding
+import com.example.metamong.R
 import com.example.metamong.fragment.mypage.DB.Memo
 
-class MongsAdapter(val context: MypageFragment, private val memos: List<Memo>) : RecyclerView.Adapter<MongsAdapter.Holder>() {
-    var mongsMemo = mutableListOf<MongsData>()
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val binding = ItemRecyclerMongsmemoBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return Holder(binding)
+class MongsAdapter: ListAdapter<Memo, MongsAdapter.MemoViewHolder>(MemosComparator()){
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemoViewHolder {
+        return MemoViewHolder.create(parent)
     }
 
-    override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.setMongs(memos[position])
+    override fun onBindViewHolder(holder: MemoViewHolder, position: Int) {
+        val current = getItem(position)
+        holder.bind(current.memo)
     }
+    class MemoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+        private val memoItemView: TextView = itemView.findViewById(R.id.mongsContent)
 
-    override fun getItemCount() = memos.size
-
-    class Holder (val binding:ItemRecyclerMongsmemoBinding): RecyclerView.ViewHolder(binding.root){
-        fun setMongs(data : Memo) {
-            with(binding){
-                mongsBg.setImageResource(data.memoBg)
-                mongsContentBg.setImageResource(data.memoContentBg)
-                mongsimageBg.setImageResource(data.memoImgBg)
-                mongsTitle.text = data.memoTitle
-                mongsContent.text = data.memoContent
+        fun bind(text: String?){
+            memoItemView.text = text
+        }
+        companion object {
+            fun create(parent: ViewGroup):MemoViewHolder{
+                val view: View = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.item_recycler_mongsmemo, parent, false)
+                return MemoViewHolder(view)
             }
         }
     }
+    class MemosComparator : DiffUtil.ItemCallback<Memo>() {
+        override fun areItemsTheSame(oldItem: Memo, newItem: Memo): Boolean {
+            return oldItem === newItem
+        }
 
+        override fun areContentsTheSame(oldItem: Memo, newItem: Memo): Boolean {
+            return oldItem.memo == newItem.memo
+        }
+    }
 }

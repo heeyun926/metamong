@@ -25,6 +25,8 @@ class HomeActivity_Sub : AppCompatActivity() {
         //Bottom_nav menu, Navigation Controller add
         navController?.let { NavigationUI.setupWithNavController(binding.bottomNav, it) }
 
+
+
     }
     var waitTime=0L
     override fun onBackPressed() {
