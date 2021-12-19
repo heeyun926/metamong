@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 
-@Entity(tableName = "memo")
+@Entity(tableName = "memo_table")
 
 class Memo(@PrimaryKey var id : Long?,
            @ColumnInfo(name ="memoBG") var memoBg: Int,

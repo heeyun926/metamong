@@ -4,15 +4,16 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface MemoDao {
-    @Query("SELECT * FROM memo")
-    fun getAll(): List<Memo>
+    @Query("SELECT * FROM memo_table")
+    fun getAll(): Flow<List<Memo>>
 
     @Insert(onConflict = REPLACE)
-    fun insert(memo: Memo)
+    suspend fun insert(memo: Memo)
 
-    @Query("DELETE from memo")
-    fun deleteAll()
+    @Query("DELETE from memo_table")
+    suspend fun deleteAll()
 }
