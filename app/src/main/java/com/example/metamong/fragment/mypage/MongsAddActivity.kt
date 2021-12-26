@@ -14,7 +14,9 @@ class MongsAddActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val editMemoView = findViewById<EditText>(R.id.editMemo)
+        binding.MongsSaveBtn.setOnClickListener{
+
+        }
     }
 
 }
