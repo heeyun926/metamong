@@ -2,13 +2,19 @@ package com.example.metamong.fragment.mypage
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
 import com.example.metamong.R
+import com.example.metamong.databinding.ActivityHomeSubBinding
+import com.example.metamong.databinding.ActivityMongsAddBinding
 
 class MongsAddActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMongsAddBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityMongsAddBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mongs_add)
+        setContentView(binding.root)
 
+        val editMemoView = findViewById<EditText>(R.id.editMemo)
     }
 
 }

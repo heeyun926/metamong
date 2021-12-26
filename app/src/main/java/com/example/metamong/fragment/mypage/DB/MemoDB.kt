@@ -4,6 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlin.reflect.KParameter
 
 
 @Database(entities = [Memo::class], version = 1)
@@ -14,7 +19,7 @@ abstract class MemoDB : RoomDatabase(){
         @Volatile
         private var instance: MemoDB? = null
 
-        fun getInstance(context: Context): MemoDB {
+        fun getInstance(context: Context, applicationScope: CoroutineScope): MemoDB {
             return instance ?: synchronized(this) {
                 val INSTANCE = Room.databaseBuilder(
                     context.applicationContext,
@@ -22,6 +27,22 @@ abstract class MemoDB : RoomDatabase(){
                 ).build()
                 instance = INSTANCE
                 INSTANCE
+            }
+        }
+
+        private class MemoDatabaseCallback(
+            private val scope: CoroutineScope
+        ) : RoomDatabase.Callback(){
+            override fun onCreate(db: SupportSQLiteDatabase) {
+                super.onCreate(db)
+                instance?.let { database ->
+                    scope.launch {
+                        val memoDao = database.memoDao()
+                        //Delete all
+                        memoDao.deleteAll()
+
+                    }
+                }
             }
         }
     }

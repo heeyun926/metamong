@@ -50,7 +50,7 @@ import com.example.metamong.fragment.mypage.DB.MemoDB
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding?.btnAddMemo?.setOnClickListener{
+        binding?.btnPlus?.setOnClickListener{
                val intent = Intent(context, MongsActivity::class.java)
                startActivity(intent)
             }
