@@ -7,12 +7,24 @@ import androidx.room.PrimaryKey
 
 
 @Entity(tableName = "memo_table")
-data class Memo(@PrimaryKey @NonNull var memo : String,
-           @ColumnInfo(name ="memoBG") var memoBg: Int,
-           @ColumnInfo(name ="memoContentBg") var memoContentBg: Int,
-           @ColumnInfo(name ="memoImgBg") var memoImgBg: Int,
-           @ColumnInfo(name = "memoTitle") var memoTitle: String,
-           @ColumnInfo(name = "memoContent") var memoContent: String?)
+data class Memo(@PrimaryKey @NonNull @ColumnInfo var memo: String)
+                //@ColumnInfo(name ="memoBG") var memoBg: Bitmap? = null,
+                //@ColumnInfo(name = "memoTitle") var memoTitle: String)
+                //@ColumnInfo(name = "memoContent") var memoContent: String?)
 
-
-
+/**
+class Converters {
+    //Bitmap -> ByteArray 변환
+    @TypeConverter
+    fun toByteArray(bitmap: Bitmap) : ByteArray{
+        val outputStream = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.PNG,100,outputStream)
+        return outputStream.toByteArray()
+    }
+    //Byte -> Bitmap
+    @TypeConverter
+    fun toBitmap(bytes : ByteArray) : Bitmap{
+        return BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+    }
+}
+**/
