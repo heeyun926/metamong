@@ -69,23 +69,8 @@ class MypageFragment() : Fragment(){
 
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        Log.i("roomFragment12","error")
 
-        if (requestCode == newMypageFragmentRequestCode && resultCode == Activity.RESULT_OK) {
-            data?.getStringExtra(MongsAddActivity.EXTRA_REPLY)?.let { reply ->
-                val memo = Memo(reply)
-                viewModel.insert(memo)
-            }
-        } else {
-            Toast.makeText(
-                context,
-                R.string.empty_not_saved,
-                Toast.LENGTH_LONG
-            ).show()
-        }
-    }
+
     override fun onDestroyView() {
         binding = null
         super.onDestroyView()
