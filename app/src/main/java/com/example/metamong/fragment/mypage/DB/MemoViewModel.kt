@@ -1,13 +1,14 @@
 package com.example.metamong.fragment.mypage.DB
 
 import androidx.lifecycle.*
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
 
 class MemoViewModel(private val repository: MemoRepository) : ViewModel(){
     val allMemos: LiveData<List<Memo>> = repository.allMemos.asLiveData()
 
-    fun insert(memo: Memo) = viewModelScope.launch {
+    fun insert(memo: Memo) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(memo)
     }
 }

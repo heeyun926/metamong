@@ -1,31 +1,27 @@
 package com.example.metamong.fragment.mypage
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.metamong.R
 import com.example.metamong.databinding.FragmentMypageBinding
-import com.example.metamong.fragment.home.SharemongAdapter
-import com.example.metamong.fragment.home.SharemongData
 import com.example.metamong.fragment.mypage.DB.*
 
 
 class MypageFragment() : Fragment(){
-     private var binding: FragmentMypageBinding? = null
-     private val viewModel: MemoViewModel by viewModels()
+    private var binding: FragmentMypageBinding? = null
+    private lateinit var memoViewModel: MemoViewModel
+//    private val memoViewModel : MemoViewModel by viewModels()
+    private val adapter : MongsAdapter by lazy { MongsAdapter(memoViewModel) }
 
-    private val newMypageFragmentRequestCode = 1
-/**
     companion object {
         fun newInstance(): MypageFragment {
             val fragment = MypageFragment()
@@ -35,7 +31,7 @@ class MypageFragment() : Fragment(){
 
             return fragment
         }
-    }**/
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,26 +42,26 @@ class MypageFragment() : Fragment(){
     val mBinding = FragmentMypageBinding.inflate(inflater, container, false)
         binding = mBinding
 
-        return binding?.root
+    memoViewModel = ViewModelProviders.of(this).get(MemoViewModel::class.java)
+    //아이템 레이아웃 설정 및 어댑터 연결
+    binding!!.recyclerMongs2.layoutManager = LinearLayoutManager(activity,LinearLayoutManager.HORIZONTAL,false)
+    binding!!.recyclerMongs2.adapter = adapter
+
+    memoViewModel.allMemos.observe(viewLifecycleOwner, Observer {
+        adapter.setData(it)
+    })
+
+    return binding?.root
     }
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.d("roomFragment","open")
-        var recyclerView = binding!!.recyclerMongs2
-        var adapter = MongsAdapter()
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(context)
 
         binding?.btnPlus?.setOnClickListener{
                val intent = Intent(context, MongsActivity::class.java)
                startActivity(intent)
             }
-        viewModel.allMemos.observe(viewLifecycleOwner) { memos ->
-            // Update the cached copy of the words in the adapter.
-            memos.let { adapter.submitList(it) }
-        }
 
     }
 

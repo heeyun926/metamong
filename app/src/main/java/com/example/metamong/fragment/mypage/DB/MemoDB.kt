@@ -28,14 +28,16 @@ abstract class MemoDB : RoomDatabase(){
                     context.applicationContext,
                     MemoDB::class.java, "memo_database"
                 )
-                    .addCallback(MemoDatabaseCallback(applicationScope))
-                    .fallbackToDestructiveMigration()
+//                    .addCallback(MemoDatabaseCallback(applicationScope))
+//                    .fallbackToDestructiveMigration()
                     .build()
-                instance = INSTANCE
-                INSTANCE
+//                instance = INSTANCE
+//                INSTANCE
+                return INSTANCE
             }
         }
-
+    }
+/**
         private class MemoDatabaseCallback(
             private val scope: CoroutineScope
         ) : RoomDatabase.Callback(){
@@ -55,6 +57,6 @@ abstract class MemoDB : RoomDatabase(){
                 memoDao.insert(memo)
             }
         }
-    }
+    }**/
 }
 

@@ -1,6 +1,7 @@
 package com.example.metamong.fragment.mypage
 
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,10 +11,13 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.metamong.R
 import com.example.metamong.fragment.mypage.DB.Memo
+import com.example.metamong.fragment.mypage.DB.MemoViewModel
 
-class MongsAdapter: ListAdapter<Memo, MongsAdapter.MemoViewHolder>(MemosComparator()){
+class MongsAdapter(memoViewModel: MemoViewModel) : ListAdapter<Memo, MongsAdapter.MemoViewHolder>(MemosComparator()){
+    private var memoList = emptyList<Memo>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemoViewHolder {
-        return MemoViewHolder.create(parent)
+        return MemoViewHolder(parent)
+
     }
 
     override fun onBindViewHolder(holder: MemoViewHolder, position: Int) {
@@ -26,13 +30,7 @@ class MongsAdapter: ListAdapter<Memo, MongsAdapter.MemoViewHolder>(MemosComparat
         fun bind(text: String?){
             memoItemView.text = text
         }
-        companion object {
-            fun create(parent: ViewGroup):MemoViewHolder{
-                val view: View = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_recycler_mongsmemo, parent, false)
-                return MemoViewHolder(view)
-            }
-        }
+
     }
     class MemosComparator : DiffUtil.ItemCallback<Memo>() {
         override fun areItemsTheSame(oldItem: Memo, newItem: Memo): Boolean {
@@ -42,5 +40,10 @@ class MongsAdapter: ListAdapter<Memo, MongsAdapter.MemoViewHolder>(MemosComparat
         override fun areContentsTheSame(oldItem: Memo, newItem: Memo): Boolean {
             return oldItem.memo == newItem.memo
         }
+    }
+    @SuppressLint("NotifyDataSetChanged")
+    fun setData(memo : List<Memo>){
+        memoList = memo
+        notifyDataSetChanged()
     }
 }

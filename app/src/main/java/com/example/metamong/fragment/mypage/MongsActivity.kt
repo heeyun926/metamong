@@ -26,9 +26,8 @@ class MongsActivity : AppCompatActivity() {
         binding = ActivityMongsBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
         val recyclerView = binding.recyclerMongs
-        val adapter = MongsAdapter()
+        val adapter = MongsAdapter(memoViewModel)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
