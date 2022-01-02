@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,8 +21,9 @@ class MypageFragment() : Fragment(){
     private var binding: FragmentMypageBinding? = null
     private lateinit var memoViewModel: MemoViewModel
 //    private val memoViewModel : MemoViewModel by viewModels()
-    private val adapter : MongsAdapter by lazy { MongsAdapter(memoViewModel) }
 
+    private val adapter : MongsAdapter by lazy { MongsAdapter(memoViewModel) }
+/**
     companion object {
         fun newInstance(): MypageFragment {
             val fragment = MypageFragment()
@@ -31,18 +33,20 @@ class MypageFragment() : Fragment(){
 
             return fragment
         }
-    }
+    }**/
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+    memoViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())
+        .get(MemoViewModel::class.java)
+
 
     val mBinding = FragmentMypageBinding.inflate(inflater, container, false)
         binding = mBinding
-
-    memoViewModel = ViewModelProviders.of(this).get(MemoViewModel::class.java)
+    //memoViewModel = ViewModelProvider(this,MemoViewModelFactory(MemoRepository())).get(MemoViewModel::class.java)
     //아이템 레이아웃 설정 및 어댑터 연결
     binding!!.recyclerMongs2.layoutManager = LinearLayoutManager(activity,LinearLayoutManager.HORIZONTAL,false)
     binding!!.recyclerMongs2.adapter = adapter
