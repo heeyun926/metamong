@@ -1,19 +1,16 @@
-package com.example.metamong.fragment.mypage.DB
+package com.example.metamong.fragment.mypage.db
 
 import android.content.Context
-import androidx.databinding.adapters.Converters
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlin.reflect.KParameter
 
 
-@Database(entities = [Memo::class], version = 1)
+@Database(entities = [Memo::class], version = 2)
 //@TypeConverters(Converters::class)
 abstract class MemoDB : RoomDatabase(){
     abstract fun memoDao(): MemoDao
@@ -28,16 +25,16 @@ abstract class MemoDB : RoomDatabase(){
                     context.applicationContext,
                     MemoDB::class.java, "memo_database"
                 )
-//                    .addCallback(MemoDatabaseCallback(applicationScope))
-//                    .fallbackToDestructiveMigration()
+                    .addCallback(MemoDatabaseCallback(applicationScope))
+                    .fallbackToDestructiveMigration()
                     .build()
-//                instance = INSTANCE
-//                INSTANCE
-                return INSTANCE
+                instance = INSTANCE
+                INSTANCE
+
             }
         }
     }
-/**
+
         private class MemoDatabaseCallback(
             private val scope: CoroutineScope
         ) : RoomDatabase.Callback(){
@@ -53,10 +50,10 @@ abstract class MemoDB : RoomDatabase(){
             suspend fun baseDatabase(memoDao: MemoDao) {
                 memoDao.deleteAll()
 
-                val memo = Memo("hello")
+                val memo = Memo(1,"a")
                 memoDao.insert(memo)
             }
         }
-    }**/
-}
+    }
+
 

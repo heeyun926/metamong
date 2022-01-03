@@ -1,12 +1,11 @@
-package com.example.metamong.fragment.mypage.DB
+package com.example.metamong.fragment.mypage.db
 
 import androidx.room.*
-import androidx.room.OnConflictStrategy.REPLACE
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface MemoDao {
-    @Query("SELECT * FROM memo_table ORDER BY memo ASC")
+    @Query("SELECT * FROM memo_table ORDER BY memoContent ASC")
     fun getAll(): Flow<List<Memo>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)

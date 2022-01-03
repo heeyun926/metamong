@@ -1,4 +1,4 @@
-package com.example.metamong.fragment.mypage.DB
+package com.example.metamong.fragment.mypage.db
 
 import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers

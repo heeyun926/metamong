@@ -7,19 +7,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.metamong.databinding.FragmentMypageBinding
-import com.example.metamong.fragment.mypage.DB.*
+import com.example.metamong.fragment.mypage.db.*
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
 class MypageFragment() : Fragment(){
     private var binding: FragmentMypageBinding? = null
-    private lateinit var memoViewModel: MemoViewModel
+    private val memoViewModel: MemoViewModel by sharedViewModel()
+//    private lateinit var memoViewModel: MemoViewModel
+
+
 //    private val memoViewModel : MemoViewModel by viewModels()
 
     private val adapter : MongsAdapter by lazy { MongsAdapter(memoViewModel) }
@@ -40,8 +39,11 @@ class MypageFragment() : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-    memoViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())
-        .get(MemoViewModel::class.java)
+
+    memoViewModel.allMemos.observe(viewLifecycleOwner) { memos ->
+        // Update the cached copy of the words in the adapter.
+        memos.let { adapter.submitList(it) }
+    }
 
 
     val mBinding = FragmentMypageBinding.inflate(inflater, container, false)
@@ -51,9 +53,7 @@ class MypageFragment() : Fragment(){
     binding!!.recyclerMongs2.layoutManager = LinearLayoutManager(activity,LinearLayoutManager.HORIZONTAL,false)
     binding!!.recyclerMongs2.adapter = adapter
 
-    memoViewModel.allMemos.observe(viewLifecycleOwner, Observer {
-        adapter.setData(it)
-    })
+
 
     return binding?.root
     }
@@ -66,6 +66,10 @@ class MypageFragment() : Fragment(){
                val intent = Intent(context, MongsActivity::class.java)
                startActivity(intent)
             }
+        binding?.btnAddMongs2?.setOnClickListener {
+            val intent = Intent(context, MongsAddActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

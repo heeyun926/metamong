@@ -9,10 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.metamong.R
 import com.example.metamong.databinding.ActivityMongsBinding
-import com.example.metamong.fragment.mypage.DB.Memo
-import com.example.metamong.fragment.mypage.DB.MemoApplication
-import com.example.metamong.fragment.mypage.DB.MemoViewModel
-import com.example.metamong.fragment.mypage.DB.MemoViewModelFactory
+import com.example.metamong.fragment.mypage.db.Memo
+import com.example.metamong.fragment.mypage.db.MemoApplication
+import com.example.metamong.fragment.mypage.db.MemoViewModel
+import com.example.metamong.fragment.mypage.db.MemoViewModelFactory
 
 class MongsActivity : AppCompatActivity() {
 
@@ -42,7 +42,7 @@ class MongsActivity : AppCompatActivity() {
         }
     }
 
-
+/**
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -58,6 +58,6 @@ class MongsActivity : AppCompatActivity() {
                 Toast.LENGTH_LONG
             ).show()
         }
-    }
+    }**/
 
 }

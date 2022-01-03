@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.metamong">
     <!-- 권한처리 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -8,13 +9,14 @@
     <uses-permission-sdk-23 android:name="android.permission.CAMERA" />
 
     <application
-        android:allowBackup="true"
-        android:name = ".fragment.mypage.DB.MemoApplication"
+        android:allowBackup="false"
+        android:name = ".fragment.mypage.db.MemoApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar">
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        tools:ignore="AllowBackup">
         <activity
             android:name=".fragment.mypage.MongsAddActivity"
             android:exported="false" />

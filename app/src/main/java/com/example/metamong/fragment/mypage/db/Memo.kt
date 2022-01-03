@@ -1,4 +1,4 @@
-package com.example.metamong.fragment.mypage.DB
+package com.example.metamong.fragment.mypage.db
 
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
@@ -7,7 +7,8 @@ import androidx.room.PrimaryKey
 
 
 @Entity(tableName = "memo_table")
-data class Memo(@PrimaryKey @NonNull @ColumnInfo var memo: String)
+data class Memo(@PrimaryKey(autoGenerate = true) var id: Int,
+                @ColumnInfo var memoContent: String)
                 //@ColumnInfo(name ="memoBG") var memoBg: Bitmap? = null,
                 //@ColumnInfo(name = "memoTitle") var memoTitle: String)
                 //@ColumnInfo(name = "memoContent") var memoContent: String?)
