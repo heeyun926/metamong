@@ -42,7 +42,7 @@ class MypageFragment() : Fragment(){
 
     memoViewModel.allMemos.observe(viewLifecycleOwner) { memos ->
         // Update the cached copy of the words in the adapter.
-        memos.let { adapter.submitList(it) }
+        memos.let { adapter.setData(it) }
     }
 
 

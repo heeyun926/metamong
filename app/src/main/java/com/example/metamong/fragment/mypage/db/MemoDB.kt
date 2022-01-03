@@ -1,16 +1,18 @@
 package com.example.metamong.fragment.mypage.db
 
 import android.content.Context
+import androidx.databinding.adapters.Converters
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-@Database(entities = [Memo::class], version = 2)
+@Database(entities = [Memo::class], version = 3)
 //@TypeConverters(Converters::class)
 abstract class MemoDB : RoomDatabase(){
     abstract fun memoDao(): MemoDao
@@ -50,7 +52,7 @@ abstract class MemoDB : RoomDatabase(){
             suspend fun baseDatabase(memoDao: MemoDao) {
                 memoDao.deleteAll()
 
-                val memo = Memo(1,"a")
+                val memo = Memo("reply")
                 memoDao.insert(memo)
             }
         }

@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 
 
 @Entity(tableName = "memo_table")
-data class Memo(@PrimaryKey(autoGenerate = true) var id: Int,
+data class Memo(@PrimaryKey @NonNull
                 @ColumnInfo var memoContent: String)
                 //@ColumnInfo(name ="memoBG") var memoBg: Bitmap? = null,
                 //@ColumnInfo(name = "memoTitle") var memoTitle: String)
