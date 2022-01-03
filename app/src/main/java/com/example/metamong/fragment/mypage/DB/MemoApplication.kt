@@ -7,6 +7,6 @@ import kotlinx.coroutines.SupervisorJob
 class MemoApplication : Application(){
     private val applicationScope = CoroutineScope(SupervisorJob())
 
-    private val database by lazy { MemoDB.getInstance(this,applicationScope) }
+    private val database by lazy { MemoDB.getInstance(this) }
     val repository by lazy { MemoRepository(database.memoDao()) }
 }

@@ -19,8 +19,8 @@ import com.example.metamong.fragment.mypage.DB.*
 
 class MypageFragment() : Fragment(){
     private var binding: FragmentMypageBinding? = null
-    private lateinit var memoViewModel: MemoViewModel
-//    private val memoViewModel : MemoViewModel by viewModels()
+//    private lateinit var memoViewModel: MemoViewModel
+    private val memoViewModel : MemoViewModel by viewModels()
 
     private val adapter : MongsAdapter by lazy { MongsAdapter(memoViewModel) }
 /**
@@ -40,13 +40,20 @@ class MypageFragment() : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-    memoViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())
-        .get(MemoViewModel::class.java)
 
+
+
+    //뷰모델팩토리 koin사용해서 다시 해보기
+//    memoViewModel = ViewModelProvider(this, MemoViewModelFactory(MemoRepository()))
+//        .get(MemoViewModel::class.java)
+
+    memoViewModel.allMemos.observe(viewLifecycleOwner, Observer {
+        adapter.setData(it)
+    })
 
     val mBinding = FragmentMypageBinding.inflate(inflater, container, false)
         binding = mBinding
-    //memoViewModel = ViewModelProvider(this,MemoViewModelFactory(MemoRepository())).get(MemoViewModel::class.java)
+
     //아이템 레이아웃 설정 및 어댑터 연결
     binding!!.recyclerMongs2.layoutManager = LinearLayoutManager(activity,LinearLayoutManager.HORIZONTAL,false)
     binding!!.recyclerMongs2.adapter = adapter

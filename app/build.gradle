@@ -83,4 +83,16 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
+
+    // Koin Core features
+    implementation "io.insert-koin:koin-core:${versions.koin}"
+    // Koin Test features
+    testImplementation "io.insert-koin:koin-test:${versions.koin}"
+    // Koin for JUnit 4
+    testImplementation "io.insert-koin:koin-test-junit4:${versions.koin}"
+    // Koin main features for Android
+    implementation "io.insert-koin:koin-android:${versions.koin}"
+
+//    implementation "org.koin:koin-androidx-viewmodel:${versions.koin}"
+
 }

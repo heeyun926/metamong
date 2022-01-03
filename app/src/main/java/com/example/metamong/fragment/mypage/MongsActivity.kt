@@ -12,14 +12,13 @@ import com.example.metamong.databinding.ActivityMongsBinding
 import com.example.metamong.fragment.mypage.DB.Memo
 import com.example.metamong.fragment.mypage.DB.MemoApplication
 import com.example.metamong.fragment.mypage.DB.MemoViewModel
-import com.example.metamong.fragment.mypage.DB.MemoViewModelFactory
+
 
 class MongsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMongsBinding
-    private val memoViewModel: MemoViewModel by viewModels {
-        MemoViewModelFactory((application as MemoApplication).repository)
-    }
+    private val memoViewModel: MemoViewModel by viewModels ()
+
     private val newMonsActivityRequestCode = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
