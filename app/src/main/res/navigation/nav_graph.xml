@@ -37,5 +37,27 @@
         android:id="@+id/mypageFragment"
         android:name="com.example.metamong.fragment.mypage.MypageFragment"
         android:label="fragment_mypage"
-        tools:layout="@layout/fragment_mypage" />
+        tools:layout="@layout/fragment_mypage" >
+        <action
+            android:id="@+id/action_mypageFragment_to_MongsMemoAddFragement"
+            app:destination="@id/MongsMemoAddFragement" />
+    </fragment>
+    <fragment
+        android:id="@+id/MongsMemoAddFragement"
+        android:name="com.example.metamong.fragment.mypage.MongsMemoAddFragment"
+        android:label="fragment_mongsmemoadd"
+        tools:layout="@layout/fragment_home" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="memo_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_MongsMemoAddFragement_to_mypageFragment"
+            app:destination="@id/mypageFragment"
+            app:popUpTo="@id/mypageFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
 </navigation>

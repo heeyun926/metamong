@@ -4,14 +4,17 @@ import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.text.NumberFormat
 
 
-@Entity(tableName = "memo_table")
-data class Memo(@PrimaryKey @NonNull
-                @ColumnInfo var memoContent: String)
-                //@ColumnInfo(name ="memoBG") var memoBg: Bitmap? = null,
-                //@ColumnInfo(name = "memoTitle") var memoTitle: String)
-                //@ColumnInfo(name = "memoContent") var memoContent: String?)
+@Entity
+data class Memo(
+    @PrimaryKey(autoGenerate = true) val id: Int = 1,
+                @ColumnInfo(name = "memoContent")
+                val memoContent: String,
+                @ColumnInfo(name = "memoTitle") val memoTitle: String)
+//@ColumnInfo(name ="memoBG") var memoBg: Bitmap? = null,
+
 
 /**
 class Converters {

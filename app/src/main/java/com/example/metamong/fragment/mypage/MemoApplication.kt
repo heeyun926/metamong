@@ -27,7 +27,7 @@ class MemoApplication : Application(){
         }
         viewModel {
             MemoViewModel(get())
-            MemoViewModel2(get())
+//            MemoViewModel2(get())
         }
 
     }

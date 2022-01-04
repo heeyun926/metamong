@@ -21,7 +21,7 @@ class MongsAddActivity : AppCompatActivity() {
     private val memoViewModel: MemoViewModel by viewModels {
         MemoViewModelFactory((application as MemoApplication).repository)
     }
-    private val adapter: MongsAdapter by lazy { MongsAdapter(memoViewModel) }
+
     private val newMonsActivityRequestCode = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,50 +29,50 @@ class MongsAddActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        val adapter = MongsAdapter()
 
-        binding.MongsSaveBtn.setOnClickListener{
-            val bundle = Bundle()
-            val memo = binding.editTextTitle.text.toString()
-            bundle.putString(EXTRA_REPLY,memo)
-            MypageFragment().arguments = bundle
+        memoViewModel.allMemos.observe(this) { memos ->
+            // Update the cached copy of the words in the adapter.
+            memos.let { adapter.submitList(it)
+            Log.d("memo","activate")}}
 
-
+            binding.MongsSaveBtn.setOnClickListener{
+            val replyIntent = Intent()
+            if (TextUtils.isEmpty(binding.editTextTitle.text)){
+                setResult(Activity.RESULT_CANCELED,replyIntent)
+            }else{
+                val memo = binding.editTextTitle.text.toString()
+                replyIntent.putExtra(EXTRA_REPLY, memo)
+                setResult(Activity.RESULT_OK,replyIntent)
+                Log.d("memo","memoInsert?")
+            }
             finish()
         }
+
 
     }
     companion object {
         const val EXTRA_REPLY = "com.example.android.wordlistsql.REPLY"
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == newMonsActivityRequestCode && resultCode == Activity.RESULT_OK) {
-            data?.getStringExtra(EXTRA_REPLY)?.let { reply ->
-                val memo = Memo(reply)
-                memoViewModel.insert(memo)
-                Log.d("memo","memoinsert")
-            }
-        } else {
-            Toast.makeText(
-                applicationContext,
-                R.string.empty_not_saved,
-                Toast.LENGTH_LONG
-            ).show()
-        }
-    }
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//
+//        if (requestCode == newMonsActivityRequestCode && resultCode == Activity.RESULT_OK) {
+//            data?.getStringExtra(EXTRA_REPLY)?.let { reply ->
+//                val memo = Memo(reply)
+//                Log.d("memo","memoInsert")
+//                memoViewModel.insert(memo)
+//
+//            }
+//        } else {
+//            Toast.makeText(
+//                applicationContext,
+//                R.string.empty_not_saved,
+//                Toast.LENGTH_LONG
+//            ).show()
+//        }
+//    }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-

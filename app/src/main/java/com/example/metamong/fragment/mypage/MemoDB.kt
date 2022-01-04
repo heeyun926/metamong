@@ -10,7 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-@Database(entities = [Memo::class], version = 3)
+@Database(entities = [Memo::class], version = 1, exportSchema = false)
 //@TypeConverters(Converters::class)
 abstract class MemoDB : RoomDatabase(){
     abstract fun memoDao(): MemoDao
@@ -50,7 +50,7 @@ abstract class MemoDB : RoomDatabase(){
             suspend fun baseDatabase(memoDao: MemoDao) {
                 memoDao.deleteAll()
 
-                val memo = Memo("reply")
+                val memo = Memo(0,"memoContent","memoTitle")
                 memoDao.insert(memo)
             }
         }

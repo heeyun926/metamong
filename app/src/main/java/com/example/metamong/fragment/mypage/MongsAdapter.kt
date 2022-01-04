@@ -3,44 +3,38 @@ package com.example.metamong.fragment.mypage
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.metamong.R
 import com.example.metamong.databinding.ItemRecyclerMongsmemoBinding
 
-class MongsAdapter(private val memoViewModel: MemoViewModel) : ListAdapter<Memo, MongsAdapter.MemoViewHolder>(MemosComparator()) {
-    private var memoList = emptyList<Memo>()
-
-    class MemoViewHolder(val binding: ItemRecyclerMongsmemoBinding) :
-        RecyclerView.ViewHolder(binding.root){
-        lateinit var memo : Memo
-        lateinit var memoViewModel: MemoViewModel
-        fun bind(currentMemo : Memo, memoViewModel: MemoViewModel){
-            binding.memo = currentMemo
-            this.memoViewModel = memoViewModel
-        }
-        }
-
+class MongsAdapter: ListAdapter<Memo, MongsAdapter.MemoViewHolder>(MemosComparator()){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemoViewHolder {
-        val binding =
-            ItemRecyclerMongsmemoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MemoViewHolder(binding)
+        return MemoViewHolder.create(parent)
     }
 
     override fun onBindViewHolder(holder: MemoViewHolder, position: Int) {
-        holder.bind(memoList[position],memoViewModel)
-        val Memo = memoList[position]
-        holder.binding.mongsContent.text = Memo.memoContent
+        val current = getItem(position)
+        holder.bind(current.memoContent)
     }
+    class MemoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+        private val memoItemView: TextView = itemView.findViewById(R.id.mongsContent)
 
-    @SuppressLint("NotifyDataSetChanged")
-    fun setData(memo: List<Memo>) {
-        memoList = memo
-        notifyDataSetChanged()
+        fun bind(text: String?){
+            memoItemView.text = text
+        }
+        companion object {
+            fun create(parent: ViewGroup):MemoViewHolder{
+                val view: View = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.item_recycler_mongsmemo, parent, false)
+                return MemoViewHolder(view)
+            }
+        }
     }
-}
-
     class MemosComparator : DiffUtil.ItemCallback<Memo>() {
         override fun areItemsTheSame(oldItem: Memo, newItem: Memo): Boolean {
             return oldItem === newItem
@@ -50,5 +44,4 @@ class MongsAdapter(private val memoViewModel: MemoViewModel) : ListAdapter<Memo,
             return oldItem.memoContent == newItem.memoContent
         }
     }
-
-
+}
