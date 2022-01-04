@@ -69,7 +69,7 @@ class MemoViewModel(private val repository: MemoRepository) : ViewModel(){
             memoContent = memoContent
         )
     }
-}
+
 
 
 

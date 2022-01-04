@@ -79,15 +79,14 @@ class MongsMemoAddFragment : Fragment() {
         val id = navigationArgs.memoId
         if (id > 0) {
             viewModel.getItem(id).observe(this.viewLifecycleOwner) {
-                item = it
-                bind(item)
+                memo = it
+                bind(memo)
             }
         } else {
-            binding.saveAction.setOnClickListener {
+            binding.MongsSaveBtn.setOnClickListener {
                 addNewItem()
             }
         }
-    }
     }
 
 
