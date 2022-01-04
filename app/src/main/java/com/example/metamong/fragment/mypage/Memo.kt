@@ -1,4 +1,4 @@
-package com.example.metamong.fragment.mypage.db
+package com.example.metamong.fragment.mypage
 
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo

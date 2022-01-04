@@ -3,11 +3,13 @@ package com.example.metamong.main
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.example.metamong.R
 import com.example.metamong.databinding.ActivityHomeSubBinding
+import com.example.metamong.fragment.mypage.MemoViewModel
 
 class HomeActivity_Sub : AppCompatActivity() {
     private lateinit var binding: ActivityHomeSubBinding

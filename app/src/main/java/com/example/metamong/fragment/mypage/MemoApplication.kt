@@ -1,4 +1,4 @@
-package com.example.metamong.fragment.mypage.db
+package com.example.metamong.fragment.mypage
 
 import android.app.Application
 import kotlinx.coroutines.CoroutineScope
@@ -27,7 +27,9 @@ class MemoApplication : Application(){
         }
         viewModel {
             MemoViewModel(get())
+            MemoViewModel2(get())
         }
+
     }
     override fun onCreate() {
         super.onCreate()
@@ -39,7 +41,7 @@ class MemoApplication : Application(){
     }
     private val applicationScope = CoroutineScope(SupervisorJob())
 
-    private val database by lazy { MemoDB.getInstance(this,applicationScope) }
+    private val database by lazy { MemoDB.getInstance(this, applicationScope) }
     val repository by lazy { MemoRepository(database.memoDao()) }
 
 

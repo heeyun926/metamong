@@ -6,7 +6,7 @@
     <data>
         <variable
             name="memo"
-            type="com.example.metamong.fragment.mypage.db.Memo" />
+            type="com.example.metamong.fragment.mypage.Memo" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

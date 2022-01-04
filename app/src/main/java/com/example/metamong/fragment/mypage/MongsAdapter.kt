@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.metamong.databinding.ItemRecyclerMongsmemoBinding
-import com.example.metamong.fragment.mypage.db.Memo
-import com.example.metamong.fragment.mypage.db.MemoViewModel
 
 class MongsAdapter(private val memoViewModel: MemoViewModel) : ListAdapter<Memo, MongsAdapter.MemoViewHolder>(MemosComparator()) {
     private var memoList = emptyList<Memo>()
@@ -32,6 +30,8 @@ class MongsAdapter(private val memoViewModel: MemoViewModel) : ListAdapter<Memo,
 
     override fun onBindViewHolder(holder: MemoViewHolder, position: Int) {
         holder.bind(memoList[position],memoViewModel)
+        val Memo = memoList[position]
+        holder.binding.mongsContent.text = Memo.memoContent
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -40,14 +40,6 @@ class MongsAdapter(private val memoViewModel: MemoViewModel) : ListAdapter<Memo,
         notifyDataSetChanged()
     }
 }
-
-
-//        private val memoItemView: TextView = itemView.findViewById(R.id.mongsContent)
-//
-//        fun bind(text: String?){
-//            memoItemView.text = text
-//        }
-
 
     class MemosComparator : DiffUtil.ItemCallback<Memo>() {
         override fun areItemsTheSame(oldItem: Memo, newItem: Memo): Boolean {

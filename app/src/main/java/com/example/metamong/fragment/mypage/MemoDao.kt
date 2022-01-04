@@ -1,4 +1,4 @@
-package com.example.metamong.fragment.mypage.db
+package com.example.metamong.fragment.mypage
 
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow

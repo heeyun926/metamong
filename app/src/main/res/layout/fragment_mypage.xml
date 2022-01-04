@@ -34,7 +34,7 @@
                 android:id="@+id/MongsMemo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mongs"
+                android:text="Mongssdsd"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -50,19 +50,10 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/MongsMemo"
                 tools:listitem="@layout/item_recycler_mongsmemo" />
 
-            <ImageButton
-                android:id="@+id/btnPlus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:background="@null"
 
-                android:src="@drawable/ic_plus"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/btnAddMongs2"

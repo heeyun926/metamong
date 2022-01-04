@@ -23,10 +23,9 @@
         <entry key="..\:/Users/gpc/metamong/app/src/main/res/layout/fragment_cloud.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/gpc/metamong/app/src/main/res/layout/fragment_home.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/gpc/metamong/app/src/main/res/layout/fragment_mission.xml" value="0.35104166666666664" />
-        <entry key="..\:/Users/gpc/metamong/app/src/main/res/layout/fragment_mypage.xml" value="0.25" />
+        <entry key="..\:/Users/gpc/metamong/app/src/main/res/layout/fragment_mypage.xml" value="0.18" />
         <entry key="..\:/Users/gpc/metamong/app/src/main/res/layout/item_metamongresult.xml" value="0.1" />
         <entry key="..\:/Users/gpc/metamong/app/src/main/res/layout/item_recycler_mongsmemo.xml" value="0.33" />
-        <entry key="..\:/Users/gpc/metamong/app/src/main/res/layout/item_recycler_sharemong.xml" value="0.24166666666666667" />
         <entry key="..\:/Users/gpc/metamong/app/src/main/res/layout/item_recyclermemo.xml" value="0.17777777777777778" />
         <entry key="..\:/Users/gpc/metamong/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/gpc/metamong/sadfdf/app/src/main/res/layout/fragment_cloud.xml" value="0.20625" />
@@ -52,6 +51,7 @@
         <entry key="app/src/main/res/layout/activity_memo.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_memo_main.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_mission_ing.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_mongs_add.xml" value="0.26145833333333335" />
         <entry key="app/src/main/res/layout/activity_result.xml" value="0.2832080200501253" />
         <entry key="app/src/main/res/layout/activity_result_datail.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_cloud.xml" value="0.375" />
