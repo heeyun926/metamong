@@ -9,10 +9,10 @@ import java.text.NumberFormat
 
 @Entity
 data class Memo(
-    @PrimaryKey(autoGenerate = true) val id: Int = 1,
-                @ColumnInfo(name = "memoContent")
-                val memoContent: String,
-                @ColumnInfo(name = "memoTitle") val memoTitle: String)
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @ColumnInfo(name = "memoTitle") val memoTitle: String,
+    @ColumnInfo(name = "memoContent")
+    val memoContent: String)
 //@ColumnInfo(name ="memoBG") var memoBg: Bitmap? = null,
 
 

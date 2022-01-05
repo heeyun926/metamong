@@ -3,6 +3,7 @@ package com.example.metamong.fragment.mypage
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -45,13 +46,14 @@ class MypageFragment : Fragment() {
         }
 
         //아이템 레이아웃 설정 및 어댑터 연결
-        binding!!.recyclerMongs2.layoutManager = LinearLayoutManager(this.context)
+        binding!!.recyclerMongs2.layoutManager = LinearLayoutManager(this.context,LinearLayoutManager.HORIZONTAL, false)
 //            LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         binding!!.recyclerMongs2.adapter = adapter
         viewModel.allMemos.observe(this.viewLifecycleOwner) { items ->
             items.let {
                 adapter.submitList(it)
             }
+
         }
         binding!!.btnAddMongs2.setOnClickListener {
             val action = MypageFragmentDirections.actionMypageFragmentToMongsMemoAddFragement(

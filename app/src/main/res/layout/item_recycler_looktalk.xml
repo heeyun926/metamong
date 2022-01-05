@@ -15,16 +15,17 @@
         app:srcCompat="@drawable/ic_looktalk_bg" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/lookTalkMainImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/looktalkbg"
         app:srcCompat="@drawable/looktalk_image_1" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/lookTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -33,40 +34,40 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintTop_toBottomOf="@+id/lookTalkMainImage" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/lookContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="4dp"
         android:text="안드로이드 기본 개념 위..."
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/lookTitle" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/dDayBg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintStart_toStartOf="@+id/lookTalkMainImage"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_looktalk_date" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/dDayText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="D-day"
         android:textSize="9sp"
         android:textStyle="normal"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-        app:layout_constraintEnd_toEndOf="@+id/imageView7"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:layout_constraintBottom_toBottomOf="@+id/dDayBg"
+        app:layout_constraintEnd_toEndOf="@+id/dDayBg"
+        app:layout_constraintStart_toStartOf="@+id/dDayBg"
+        app:layout_constraintTop_toTopOf="@+id/dDayBg"
         tools:ignore="SmallSp" />
 
 

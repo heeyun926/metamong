@@ -50,7 +50,7 @@ class MongsMemoAddFragment : Fragment() {
             MongsSaveBtn.setOnClickListener { updateItem() }
         }
     }
-    private fun addNewItem() {
+    private fun addNewMemo() {
         if (isEntryValid()) {
             viewModel.addNewMemo(
                 binding.editTextTitle.text.toString(),
@@ -84,7 +84,7 @@ class MongsMemoAddFragment : Fragment() {
             }
         } else {
             binding.MongsSaveBtn.setOnClickListener {
-                addNewItem()
+                addNewMemo()
             }
         }
     }
