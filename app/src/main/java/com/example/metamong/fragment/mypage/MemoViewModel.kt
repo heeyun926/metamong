@@ -5,8 +5,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
 
-class MemoViewModel(private val repository: MemoRepository) : ViewModel(){
-    val allMemos: LiveData<List<Memo>> = repository.allMemos.asLiveData()
+class MemoViewModel(private val memoDao: MemoDao) : ViewModel(){
+    val allMemos: LiveData<List<Memo>> = memoDao.getAll().asLiveData()
 
 
     fun addNewMemo(memoTitle: String, memoContent: String) {
@@ -23,7 +23,7 @@ class MemoViewModel(private val repository: MemoRepository) : ViewModel(){
     }
     private fun updateItem(memo: Memo) {
         viewModelScope.launch {
-            repository.update(memo)
+            memoDao.update(memo)
         }
     }
     private fun getUpdatedItemEntry(
@@ -40,18 +40,17 @@ class MemoViewModel(private val repository: MemoRepository) : ViewModel(){
     }
 
     fun insert(memo: Memo) = viewModelScope.launch(Dispatchers.IO) {
-        repository.insert(memo)
+        memoDao.insert(memo)
     }
     fun delete(memo: Memo){
         viewModelScope.launch {
-            repository.delete(memo)
+            memoDao.deleteAll(memo)
         }
     }
-    fun getItem(id: Int){
-        viewModelScope.launch {
-            repository.getItem(id)
-        }
+    fun getItem(id:Int) :LiveData<Memo>{
+        return memoDao.getItem(id).asLiveData()
     }
+
 
 
         fun isEntryValid(memoTitle: String,memoContent: String): Boolean {
@@ -73,11 +72,11 @@ class MemoViewModel(private val repository: MemoRepository) : ViewModel(){
 
 
 
-class MemoViewModelFactory(private val repository: MemoRepository): ViewModelProvider.Factory{
+class MemoViewModelFactory(private val memodao: MemoDao): ViewModelProvider.Factory{
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(MemoViewModel::class.java)){
             @Suppress("UNCHECKED_CAST")
-            return MemoViewModel(repository) as T
+            return MemoViewModel(memodao) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

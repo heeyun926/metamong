@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 
 @Database(entities = [Memo::class], version = 1, exportSchema = false)
 //@TypeConverters(Converters::class)
-abstract class MemoDB : RoomDatabase(){
+abstract class MemoDB : RoomDatabase() {
     abstract fun memoDao(): MemoDao
 
     companion object {
@@ -25,7 +25,7 @@ abstract class MemoDB : RoomDatabase(){
                     context.applicationContext,
                     MemoDB::class.java, "memo_database"
                 )
-                    .addCallback(MemoDatabaseCallback(applicationScope))
+//                    .addCallback(MemoDatabaseCallback(applicationScope))
                     .fallbackToDestructiveMigration()
                     .build()
                 instance = INSTANCE
@@ -34,26 +34,27 @@ abstract class MemoDB : RoomDatabase(){
             }
         }
     }
+}
 
-        private class MemoDatabaseCallback(
-            private val scope: CoroutineScope
-        ) : RoomDatabase.Callback(){
-            override fun onCreate(db: SupportSQLiteDatabase) {
-                super.onCreate(db)
-                instance?.let { database ->
-                    scope.launch (Dispatchers.IO){
-                        baseDatabase(database.memoDao())
-
-                    }
-                }
-            }
-            suspend fun baseDatabase(memoDao: MemoDao) {
-                memoDao.deleteAll()
-
-                val memo = Memo(0,"memoContent","memoTitle")
-                memoDao.insert(memo)
-            }
-        }
-    }
+//        private class MemoDatabaseCallback(
+//            private val scope: CoroutineScope
+//        ) : RoomDatabase.Callback(){
+//            override fun onCreate(db: SupportSQLiteDatabase) {
+//                super.onCreate(db)
+//                instance?.let { database ->
+//                    scope.launch (Dispatchers.IO){
+//                        baseDatabase(database.memoDao())
+//
+//                    }
+//                }
+//            }
+//            suspend fun baseDatabase(memoDao: MemoDao) {
+//                memoDao.deleteAll(memoDao)
+//
+//                val memo = Memo(0,"memoContent","memoTitle")
+//                memoDao.insert(memo)
+//            }
+//        }
+//    }
 
 

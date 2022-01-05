@@ -18,7 +18,7 @@ import com.example.metamong.databinding.FragmentMongsMemoAddBinding
 class MongsMemoAddFragment : Fragment() {
     private val viewModel: MemoViewModel by activityViewModels {
         MemoViewModelFactory(
-            (activity?.application as MemoApplication).repository
+            (activity?.application as MemoApplication).database.memoDao()
         )
     }
     private val navigationArgs: MongsMemoAddFragmentArgs by navArgs()
