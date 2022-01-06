@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.metamong.fragment.home.HomeFragment"
+        android:name="com.example.metamong.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/cloudFragment"
-        android:name="com.example.metamong.fragment.CloudFragment"
+        android:name="com.example.metamong.CloudFragment"
         android:label="fragment_cloud"
         tools:layout="@layout/fragment_cloud" >
         <action
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/missionFragment"
-        android:name="com.example.metamong.fragment.mission.MissionFragment"
+        android:name="com.example.metamong.ui.mission.MissionFragment"
         android:label="fragment_mission"
         tools:layout="@layout/fragment_mission" >
         <action
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/mypageFragment"
-        android:name="com.example.metamong.fragment.mypage.MypageFragment"
+        android:name="com.example.metamong.ui.mypage.MypageFragment"
         android:label="fragment_mypage"
         tools:layout="@layout/fragment_mypage" >
         <action
@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/mongsMemoAddFragement"
-        android:name="com.example.metamong.fragment.mypage.MongsMemoAddFragment"
+        android:name="com.example.metamong.ui.mypage.memo.MongsMemoAddFragment"
         android:label="fragment_mongsmemoadd"
         tools:layout="@layout/fragment_home" >
         <argument
@@ -65,7 +65,7 @@
     </fragment>
     <fragment
         android:id="@+id/mongsMemoDetailFragment"
-        android:name="com.example.metamong.fragment.mypage.MongsMemoDetailFragment"
+        android:name="com.example.metamong.ui.mypage.memo.MongsMemoDetailFragment"
         android:label="fragment_mongsmemodetail"
         tools:layout="@layout/fragment_mongs_memo_detail">
         <argument

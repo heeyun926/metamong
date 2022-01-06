@@ -10,7 +10,7 @@
 
     <application
         android:allowBackup="false"
-        android:name = ".fragment.mypage.MemoApplication"
+        android:name = ".ui.mypage.memo.MemoApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -24,19 +24,19 @@
             android:name=".fragment.mypage.MongsActivity"
             android:exported="false" />
         <activity
-            android:name=".MissionIngActivity"
+            android:name=".ui.mission.MissionIngActivity"
             android:exported="false" />
         <activity
-            android:name=".ResultDatailActivity"
+            android:name=".ui.test.ResultDatailActivity"
             android:exported="false" />
         <activity
-            android:name=".main.HomeActivity_Sub"
+            android:name="com.example.metamong.ui.main.HomeActivity_Sub"
             android:exported="false" />
         <activity
-            android:name=".ResultActivity"
+            android:name=".ui.test.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.test.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

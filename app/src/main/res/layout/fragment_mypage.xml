@@ -8,7 +8,7 @@
     android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.mypage.MypageFragment">
+    tools:context=".ui.mypage.MypageFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

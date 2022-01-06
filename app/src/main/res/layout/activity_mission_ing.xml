@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MissionIngActivity">
+    tools:context=".ui.mission.MissionIngActivity">
 
     <CheckBox
         android:id="@+id/checkBox"
