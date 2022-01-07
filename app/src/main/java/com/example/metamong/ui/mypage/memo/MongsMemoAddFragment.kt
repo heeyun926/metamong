@@ -7,10 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.metamong.R
 import com.example.metamong.databinding.FragmentMongsMemoAddBinding
 import com.example.metamong.ui.main.HomeActivity_Sub
 
@@ -40,6 +43,20 @@ class MongsMemoAddFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        val dataMongsMemo = resources.getStringArray(R.array.mongs_memo)
+        var list = mutableListOf<Int>()
+        list.add(R.drawable.ic_main_share)
+        list.add(R.drawable.ic_main_share)
+        list.add(R.drawable.ic_main_share)
+        list.add(R.drawable.ic_main_share)
+        list.add(R.drawable.ic_main_share)
+
+
+
+        var adapter = activity?.let { ArrayAdapter<String>(it.baseContext,R.layout.support_simple_spinner_dropdown_item,dataMongsMemo) }
+        with(binding){
+            spinner.adapter = adapter
+        }
 
         _binding = FragmentMongsMemoAddBinding.inflate(inflater,container, false)
         return binding.root

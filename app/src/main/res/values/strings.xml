@@ -3,4 +3,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="empty_not_saved" />
+    <string-array name="mongs_memo">
+        <item>메모할 체험 분야를 선택해주세요 </item>
+        <item>UXUI디자인 </item>
+        <item>프로그래밍 </item>
+        <item>조향사 </item>
+        <item>프로젝트 매니저 </item>
+        <item>신약 개발 연구원 </item>
+    </string-array>
 </resources>
