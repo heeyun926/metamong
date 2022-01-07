@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
@@ -43,24 +44,12 @@ class MongsMemoAddFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val dataMongsMemo = resources.getStringArray(R.array.mongs_memo)
-        var list = mutableListOf<Int>()
-        list.add(R.drawable.ic_main_share)
-        list.add(R.drawable.ic_main_share)
-        list.add(R.drawable.ic_main_share)
-        list.add(R.drawable.ic_main_share)
-        list.add(R.drawable.ic_main_share)
 
 
-
-        var adapter = activity?.let { ArrayAdapter<String>(it.baseContext,R.layout.support_simple_spinner_dropdown_item,dataMongsMemo) }
-        with(binding){
-            spinner.adapter = adapter
-        }
-
-        _binding = FragmentMongsMemoAddBinding.inflate(inflater,container, false)
+        _binding = FragmentMongsMemoAddBinding.inflate(inflater, container, false)
         return binding.root
     }
+
 
     private fun isEntryValid(): Boolean {
         return viewModel.isEntryValid(
@@ -76,6 +65,7 @@ class MongsMemoAddFragment : Fragment() {
             MongsSaveBtn.setOnClickListener { updateItem() }
         }
     }
+
     private fun addNewMemo() {
         if (isEntryValid()) {
             viewModel.addNewMemo(
@@ -116,12 +106,52 @@ class MongsMemoAddFragment : Fragment() {
             }
         }
 
-        binding.backBtn.setOnClickListener{
+        binding.backBtn.setOnClickListener {
             onDestroyView()
         }
+        val dataMongsMemo = resources.getStringArray(R.array.mongs_memo)
+        val list = mutableListOf<Int>()
+        list.add(R.drawable.mobile_side)
+        list.add(R.drawable.desktop_main)
+        list.add(R.drawable.circle_bottle)
+        list.add(R.drawable.pencil)
+        list.add(R.drawable.long_bottle)
+
+
+        val adapter = activity?.let {
+            ArrayAdapter<String>(
+                it.baseContext,
+                R.layout.support_simple_spinner_dropdown_item,
+                dataMongsMemo
+            )
+        }
+        with(binding) {
+            spinner.adapter = adapter
+
+            spinner.setSelection(1) //시작 위치 지
+
+
+            spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+
+                    val selected = dataMongsMemo[position]
+                    resultText.text = selected
+                    if (position != 0) {
+                        imageView9.setImageResource(list[position - 1])
+                    }
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+
+                }
+            }
+        }
     }
-
-
 
 
     override fun onDestroyView() {
