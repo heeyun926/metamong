@@ -31,7 +31,10 @@
         <entry key="..\:/Users/gpc/metamong/sadfdf/app/src/main/res/layout/fragment_cloud.xml" value="0.20625" />
         <entry key="..\:/Users/gpc/metamong/sadfdf/app/src/main/res/layout/fragment_mission.xml" value="0.20625" />
         <entry key="..\:/Users/gpc/metamong/sadfdf/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20625" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/fragment_mongs_memo_add.xml" value="0.25" />
+        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/drawable/ic_looktalk_bg.xml" value="0.1398148148148148" />
+        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/drawable/ic_mongsmemo_content_bg.xml" value="0.1398148148148148" />
+        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/drawable/spinner_bg.xml" value="0.16018518518518518" />
+        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/fragment_mongs_memo_add.xml" value="0.23293172690763053" />
         <entry key="app/src/main/res/drawable/ic_btn_back.xml" value="0.43072916666666666" />
         <entry key="app/src/main/res/drawable/ic_btn_select_01.xml" value="0.43072916666666666" />
         <entry key="app/src/main/res/drawable/ic_chat.xml" value="0.25416666666666665" />
