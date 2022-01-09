@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Spinner
 import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -109,7 +108,10 @@ class MongsMemoAddFragment : Fragment() {
         binding.backBtn.setOnClickListener {
             onDestroyView()
         }
+
+
         val dataMongsMemo = resources.getStringArray(R.array.mongs_memo)
+
         val list = mutableListOf<Int>()
         list.add(R.drawable.mobile_side)
         list.add(R.drawable.desktop_main)
@@ -117,20 +119,25 @@ class MongsMemoAddFragment : Fragment() {
         list.add(R.drawable.pencil)
         list.add(R.drawable.long_bottle)
 
-
-        val adapter = activity?.let {
-            ArrayAdapter<String>(
-                it.baseContext,
-                R.layout.support_simple_spinner_dropdown_item,
-                dataMongsMemo
-            )
+        val arrayAdapter = activity?.let {
+            ArrayAdapter<String>(it.baseContext, R.layout.spinner_text, dataMongsMemo)
         }
+        arrayAdapter?.setDropDownViewResource(R.layout.spinner_text)
+
+        binding.spinner.adapter = arrayAdapter
+
+
+//        val adapter = activity?.let {
+//            ArrayAdapter<String>(
+//                it.baseContext,
+//                R.layout.support_simple_spinner_dropdown_item,
+//                dataMongsMemo
+//            )
+//        }
         with(binding) {
-            spinner.adapter = adapter
+            spinner.adapter = arrayAdapter
 
-            spinner.setSelection(1) //시작 위치 지
-
-
+            spinner.setSelection(0) //시작 위치 지정
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     parent: AdapterView<*>?,
@@ -141,8 +148,10 @@ class MongsMemoAddFragment : Fragment() {
 
                     val selected = dataMongsMemo[position]
                     resultText.text = selected
-                    if (position != 0) {
-                        imageView9.setImageResource(list[position - 1])
+                    if (position == 0) {
+                        imageView9.setImageResource(R.drawable.ic_mongsmemo_content_bg)
+                    }else{
+                        imageView9.setImageResource(list[position-1])
                     }
                 }
 
@@ -152,7 +161,6 @@ class MongsMemoAddFragment : Fragment() {
             }
         }
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -166,15 +174,4 @@ class MongsMemoAddFragment : Fragment() {
         val homesubAct = activity as HomeActivity_Sub
         homesubAct.HideBottomNavi(false)
     }
-
-//    companion object {
-//
-//        fun newInstance(param1: String, param2: String) =
-//            MongsMemoAddFragment().apply {
-//                arguments = Bundle().apply {
-//                    putString(ARG_PARAM1, param1)
-//                    putString(ARG_PARAM2, param2)
-//                }
-//            }
-//    }
 }

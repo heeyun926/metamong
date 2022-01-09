@@ -72,7 +72,6 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="16dp"
-            android:gravity="center"
             android:textColor="@color/white"
             android:textColorHint="#ffffff"
             app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +88,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinner"
-            app:srcCompat="@drawable/circle_bottle" />
+            />
 
         <TextView
             android:id="@+id/resultText"
