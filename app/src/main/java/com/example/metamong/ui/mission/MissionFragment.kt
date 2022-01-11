@@ -12,10 +12,14 @@ import com.example.metamong.model.MissionIngData
 class MissionFragment : Fragment() {
     private var binding : FragmentMissionBinding? = null
     val progressint = 50
+    val progressint1 = 100
+    val progressint2 = 20
     private fun loadData(): MutableList<MissionIngData>{
         val list = mutableListOf<MissionIngData>()
         with(list){
             add(MissionIngData(R.drawable.ic_mission_little_ing, "사용자인터뷰", progressint))
+            add(MissionIngData(R.drawable.ic_mission_little_ing, "조향사란?", progressint1))
+            add(MissionIngData(R.drawable.ic_mission_little_ing, "서버 기초 구조", progressint2))
         }
         return list
     }
