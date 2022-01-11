@@ -94,7 +94,7 @@ dependencies {
     // Koin main features for Android
     implementation "io.insert-koin:koin-android:${versions.koin}"
 
-
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
 
 }

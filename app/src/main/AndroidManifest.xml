@@ -9,14 +9,17 @@
     <uses-permission-sdk-23 android:name="android.permission.CAMERA" />
 
     <application
+        android:name=".ui.mypage.memo.MemoApplication"
         android:allowBackup="false"
-        android:name = ".ui.mypage.memo.MemoApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:ignore="AllowBackup">
+        <activity
+            android:name=".ui.mypage.history.HistoryActivity"
+            android:exported="false" />
         <activity
             android:name=".fragment.mypage.MongsAddActivity"
             android:exported="false" />
@@ -30,7 +33,7 @@
             android:name=".ui.test.ResultDatailActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.metamong.ui.main.HomeActivity_Sub"
+            android:name=".ui.main.HomeActivity_Sub"
             android:exported="false" />
         <activity
             android:name=".ui.test.ResultActivity"
