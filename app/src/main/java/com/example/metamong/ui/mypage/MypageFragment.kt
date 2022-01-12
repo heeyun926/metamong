@@ -1,6 +1,7 @@
 package com.example.metamong.ui.mypage
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.metamong.R
 import com.example.metamong.databinding.FragmentMypageBinding
+import com.example.metamong.ui.mypage.history.HistoryActivity
 import com.example.metamong.ui.mypage.memo.MemoApplication
 import com.example.metamong.ui.mypage.memo.MemoListAdapter
 import com.example.metamong.ui.mypage.memo.MemoViewModel
@@ -68,6 +70,10 @@ class MypageFragment : Fragment() {
                     getString(R.string.app_name)
                 )
             this.findNavController().navigate(action)
+        }
+        binding!!.chartBg.setOnClickListener{
+                val intent = Intent(context, HistoryActivity::class.java)
+                startActivity(intent)
         }
     }
 }
