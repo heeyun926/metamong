@@ -83,6 +83,7 @@ class MongsMemoAddFragment : Fragment() {
                 this.navigationArgs.memoId,
                 this.binding.editTextTitle.text.toString(),
                 this.binding.editTextContent.text.toString()
+
             )
             val action =
                 MongsMemoAddFragmentDirections.actionMongsMemoAddFragementToMypageFragment()
@@ -92,24 +93,6 @@ class MongsMemoAddFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val id = navigationArgs.memoId
-        if (id > 0) {
-            viewModel.getItem(id).observe(this.viewLifecycleOwner) {
-                memo = it
-                bind(memo)
-            }
-        } else {
-            binding.MongsSaveBtn.setOnClickListener {
-                addNewMemo()
-            }
-        }
-
-        binding.backBtn.setOnClickListener {
-            onDestroyView()
-        }
-
-
         val dataMongsMemo = resources.getStringArray(R.array.mongs_memo)
 
         val list = mutableListOf<Int>()
@@ -150,6 +133,7 @@ class MongsMemoAddFragment : Fragment() {
                     resultText.text = selected
                     if (position == 0) {
                         imageView9.setImageResource(R.drawable.ic_mongsmemo_content_bg)
+
                     }else{
                         imageView9.setImageResource(list[position-1])
                     }
@@ -160,6 +144,27 @@ class MongsMemoAddFragment : Fragment() {
                 }
             }
         }
+
+        val id = navigationArgs.memoId
+        if (id > 0) {
+            viewModel.getItem(id).observe(this.viewLifecycleOwner) {
+                memo = it
+                bind(memo)
+            }
+        } else {
+            binding.MongsSaveBtn.setOnClickListener {
+                addNewMemo()
+            }
+        }
+
+        binding.backBtn.setOnClickListener {
+            val action =
+                MongsMemoAddFragmentDirections.actionMongsMemoAddFragementToMypageFragment()
+            findNavController().navigate(action)
+        }
+
+
+
     }
 
     override fun onDestroyView() {

@@ -3,7 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/gpc/.gradle/caches/transforms-3/a089ef95b86d74ce3a1e6bb939f3d74b/transformed/appcompat-1.4.0/res/layout/support_simple_spinner_dropdown_item.xml" value="0.325" />
+        <entry key="..\:/Users/fkffk/metamong/app/src/main/res/layout/activity_history.xml" value="0.34739583333333335" />
         <entry key="..\:/Users/gpc/AndroidStudioProjects/firstapp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.25925925925925924" />
         <entry key="..\:/Users/gpc/AndroidStudioProjects/firstapp/app/src/main/res/drawable/ic_btn_select.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/gpc/AndroidStudioProjects/firstapp/app/src/main/res/drawable/ic_btn_select_01.xml" value="0.20260416666666667" />
@@ -32,21 +32,7 @@
         <entry key="..\:/Users/gpc/metamong/sadfdf/app/src/main/res/layout/fragment_cloud.xml" value="0.20625" />
         <entry key="..\:/Users/gpc/metamong/sadfdf/app/src/main/res/layout/fragment_mission.xml" value="0.20625" />
         <entry key="..\:/Users/gpc/metamong/sadfdf/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20625" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/drawable/ic_dropdown.xml" value="0.1638888888888889" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/drawable/ic_looktalk_bg.xml" value="0.1398148148148148" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/drawable/ic_mongsmemo_content_bg.xml" value="0.1398148148148148" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/drawable/ic_myfrag_oval.xml" value="0.14" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/drawable/ic_result_circle__1_.xml" value="0.20925925925925926" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/drawable/spinner_bg.xml" value="0.16018518518518518" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/activity_history.xml" value="0.14869888475836432" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/activity_result.xml" value="0.14907407407407408" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/fragment_home.xml" value="0.30787037037037035" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/fragment_mission.xml" value="0.25" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/fragment_mongs_memo_add.xml" value="0.1402439024390244" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/fragment_mongs_memo_detail.xml" value="0.32546296296296295" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/fragment_mypage.xml" value="0.22" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/item_recyclermemo.xml" value="0.18194444444444444" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/spinner_bg.xml" value="0.25" />
+        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/fragment_mongs_memo_add.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/ic_btn_back.xml" value="0.43072916666666666" />
         <entry key="app/src/main/res/drawable/ic_btn_select_01.xml" value="0.43072916666666666" />
         <entry key="app/src/main/res/drawable/ic_chat.xml" value="0.25416666666666665" />
@@ -63,7 +49,6 @@
         <entry key="app/src/main/res/drawable/selector_radio_image_2.xml" value="0.2640625" />
         <entry key="app/src/main/res/drawable/selector_radio_text.xml" value="0.2640625" />
         <entry key="app/src/main/res/layout-v26/item_recycler_mission_ing.xml" value="0.2984375" />
-        <entry key="app/src/main/res/layout/activity_history.xml" value="0.44212962962962965" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_home_sub.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24791666666666667" />

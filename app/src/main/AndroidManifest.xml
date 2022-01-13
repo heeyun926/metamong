@@ -20,12 +20,7 @@
         <activity
             android:name=".ui.mypage.history.HistoryActivity"
             android:exported="false" />
-        <activity
-            android:name=".fragment.mypage.MongsAddActivity"
-            android:exported="false" />
-        <activity
-            android:name=".fragment.mypage.MongsActivity"
-            android:exported="false" />
+
         <activity
             android:name=".ui.mission.MissionIngActivity"
             android:exported="false" />

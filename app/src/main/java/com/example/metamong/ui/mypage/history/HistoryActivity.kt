@@ -1,9 +1,12 @@
 package com.example.metamong.ui.mypage.history
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.metamong.R
 import com.example.metamong.databinding.ActivityHistoryBinding
+import com.example.metamong.ui.main.HomeActivity_Sub
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.AxisBase
@@ -25,12 +28,27 @@ class HistoryActivity : AppCompatActivity() {
     private lateinit var lineChart: LineChart
     private var scoreList = ArrayList<Score>()
 
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btn0.setOnClickListener{
+            val intent = Intent (this, HistoryActivity::class.java)
+            intent.putExtra("zero",0)
+            startActivity(intent)
+        }
 
+        if(intent.hasExtra("zero")){
+             =intent.getIntExtra("zero",0)
+        }
+        Log.d("TAGhome", "onViewCreated: ${binding.btn0}")
+
+        scoreList.add(Score("John",10))
+        scoreList.add(Score("Rey", 75))
 
         lineChart = findViewById(R.id.linechart)
 
@@ -53,6 +71,8 @@ class HistoryActivity : AppCompatActivity() {
         //remove right y-axis
         lineChart.axisRight.isEnabled = false
 
+        lineChart.axisLeft.isEnabled = false
+
         //remove legend
         lineChart.legend.isEnabled = false
 
@@ -62,14 +82,14 @@ class HistoryActivity : AppCompatActivity() {
 
 
         //add animation
-        lineChart.animateX(1000, Easing.EaseInSine)
+        lineChart.animateX(0, Easing.EaseInSine)
 
         // to draw label on xAxis
         xAxis.position = XAxis.XAxisPosition.BOTTOM_INSIDE
         xAxis.valueFormatter = MyAxisFormatter()
         xAxis.setDrawLabels(true)
         xAxis.granularity = 1f
-        xAxis.labelRotationAngle = +90f
+        xAxis.labelRotationAngle = 0f
 
     }
 
@@ -104,21 +124,21 @@ class HistoryActivity : AppCompatActivity() {
         lineChart.data = data
 
         lineChart.invalidate()
+
     }
 
     // simulate api call
     // we are initialising it directly
     private fun getScoreList(): ArrayList<Score> {
-        scoreList.add(Score("John", 56))
+
+
+        scoreList.add(Score("John",10))
         scoreList.add(Score("Rey", 75))
-        scoreList.add(Score("Steve", 85))
-        scoreList.add(Score("Kevin", 45))
-        scoreList.add(Score("Jeff", 63))
+
+
 
         return scoreList
     }
 
 
 }
-
-
