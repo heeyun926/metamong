@@ -63,6 +63,7 @@
         <entry key="app/src/main/res/drawable/selector_radio_image_2.xml" value="0.2640625" />
         <entry key="app/src/main/res/drawable/selector_radio_text.xml" value="0.2640625" />
         <entry key="app/src/main/res/layout-v26/item_recycler_mission_ing.xml" value="0.2984375" />
+        <entry key="app/src/main/res/layout/activity_history.xml" value="0.44212962962962965" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_home_sub.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24791666666666667" />
