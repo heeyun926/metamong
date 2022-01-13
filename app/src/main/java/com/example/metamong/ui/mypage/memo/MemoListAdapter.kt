@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.metamong.databinding.ItemRecyclerMongsmemoBinding
+import com.example.metamong.model.Memo
 
 class MemoListAdapter (private val onItemClicked: (Memo) -> Unit) :
     ListAdapter<Memo, MemoListAdapter.ItemViewHolder>(DiffCallback) {

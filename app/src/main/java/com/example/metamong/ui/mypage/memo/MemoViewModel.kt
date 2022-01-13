@@ -2,6 +2,7 @@ package com.example.metamong.ui.mypage.memo
 
 import androidx.lifecycle.*
 import com.example.metamong.data.mongsmemo.MemoDao
+import com.example.metamong.model.Memo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException

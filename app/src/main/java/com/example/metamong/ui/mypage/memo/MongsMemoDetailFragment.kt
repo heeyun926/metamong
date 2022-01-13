@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.metamong.databinding.FragmentMongsMemoDetailBinding
+import com.example.metamong.model.Memo
 
 
 class MongsMemoDetailFragment : Fragment() {

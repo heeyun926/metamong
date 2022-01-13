@@ -15,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.metamong.R
 import com.example.metamong.databinding.FragmentMongsMemoAddBinding
+import com.example.metamong.model.Memo
 import com.example.metamong.ui.main.HomeActivity_Sub
 
 

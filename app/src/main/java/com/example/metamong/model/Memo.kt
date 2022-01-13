@@ -1,4 +1,4 @@
-package com.example.metamong.ui.mypage.memo
+package com.example.metamong.model
 
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo

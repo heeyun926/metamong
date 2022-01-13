@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.metamong.R
+import com.example.metamong.model.Memo
 
 class MongsAdapter: ListAdapter<Memo, MongsAdapter.MemoViewHolder>(MemosComparator()){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemoViewHolder {

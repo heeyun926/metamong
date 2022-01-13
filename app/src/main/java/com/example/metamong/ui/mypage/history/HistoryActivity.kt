@@ -35,17 +35,27 @@ class HistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.btn0.setOnClickListener{
-            val intent = Intent (this, HistoryActivity::class.java)
-            intent.putExtra("zero",0)
-            startActivity(intent)
+            var zero = 50
+            scoreList.add(Score("jon",zero))
+            Log.d("TAGhome", "onViewCreated: ${scoreList}")
+            setDataToLineChart()
+            lineChart.invalidate()
+        }
+        binding.btn5.setOnClickListener{
+            var zero = 100
+            scoreList.add(Score("jon",zero))
+            Log.d("TAGhome", "onViewCreated: ${scoreList}")
+            setDataToLineChart()
+            lineChart.invalidate()
         }
 
-        if(intent.hasExtra("zero")){
-             =intent.getIntExtra("zero",0)
-        }
-        Log.d("TAGhome", "onViewCreated: ${binding.btn0}")
+
+//        if(intent.hasExtra("zero")){
+//             =intent.getIntExtra("zero",0)
+//
+//        }
+
 
         scoreList.add(Score("John",10))
         scoreList.add(Score("Rey", 75))
@@ -57,6 +67,7 @@ class HistoryActivity : AppCompatActivity() {
 
 
         setDataToLineChart()
+        lineChart.invalidate()
 
     }
 
@@ -132,8 +143,6 @@ class HistoryActivity : AppCompatActivity() {
     private fun getScoreList(): ArrayList<Score> {
 
 
-        scoreList.add(Score("John",10))
-        scoreList.add(Score("Rey", 75))
 
 
 
