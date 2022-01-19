@@ -33,13 +33,17 @@
         <entry key="..\:/Users/gpc/metamong/sadfdf/app/src/main/res/layout/fragment_mission.xml" value="0.20625" />
         <entry key="..\:/Users/gpc/metamong/sadfdf/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20625" />
         <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/fragment_mongs_memo_add.xml" value="0.25" />
+        <entry key="app/src/main/res/drawable/bg_cloudstudy_bg.xml" value="0.3111111111111111" />
         <entry key="app/src/main/res/drawable/ic_btn_back.xml" value="0.43072916666666666" />
         <entry key="app/src/main/res/drawable/ic_btn_select_01.xml" value="0.43072916666666666" />
         <entry key="app/src/main/res/drawable/ic_chat.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3111111111111111" />
         <entry key="app/src/main/res/drawable/ic_looktalk_bg.xml" value="0.2587962962962963" />
+        <entry key="app/src/main/res/drawable/ic_looktalk_date.xml" value="0.3111111111111111" />
         <entry key="app/src/main/res/drawable/ic_main_share.xml" value="0.309375" />
         <entry key="app/src/main/res/drawable/ic_mission_little_ing.xml" value="0.2564814814814815" />
         <entry key="app/src/main/res/drawable/ic_misson_bg.xml" value="0.2564814814814815" />
+        <entry key="app/src/main/res/drawable/ic_mongsmemo_bg.xml" value="0.3111111111111111" />
         <entry key="app/src/main/res/drawable/ic_plus.xml" value="0.2800925925925926" />
         <entry key="app/src/main/res/drawable/ic_search_box.xml" value="0.2564814814814815" />
         <entry key="app/src/main/res/drawable/ic_sharemong_text_bg.xml" value="0.309375" />
@@ -71,7 +75,9 @@
         <entry key="app/src/main/res/layout/item_recycler_mission_ing.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_recycler_mongsmemo.xml" value="0.375" />
         <entry key="app/src/main/res/layout/item_recycler_sharemong.xml" value="0.26625386996904027" />
+        <entry key="app/src/main/res/layout/item_recycler_study.xml" value="0.2967592592592593" />
         <entry key="app/src/main/res/layout/item_recyclermemo.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/item_viewpager_cloud.xml" value="0.28379629629629627" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.32314814814814813" />
       </map>
     </option>

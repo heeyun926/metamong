@@ -94,7 +94,10 @@ dependencies {
     // Koin main features for Android
     implementation "io.insert-koin:koin-android:${versions.koin}"
 
+    //lineChart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    //ViewPager
+    implementation 'androidx.viewpager2:viewpager2:1.0.0-alpha01'
 
 
 }
