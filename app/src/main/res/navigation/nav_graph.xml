@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/cloudFragment"
-        android:name="com.example.metamong.CloudFragment"
+        android:name="com.example.metamong.ui.cloud.CloudFragment"
         android:label="fragment_cloud"
         tools:layout="@layout/fragment_cloud" >
         <action

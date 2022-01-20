@@ -62,7 +62,7 @@
         <entry key="app/src/main/res/layout/activity_mongs_add.xml" value="0.26145833333333335" />
         <entry key="app/src/main/res/layout/activity_result.xml" value="0.2832080200501253" />
         <entry key="app/src/main/res/layout/activity_result_datail.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/fragment_cloud.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/fragment_cloud.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_cloud2.xml" value="0.45555555555555555" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_memo.xml" value="0.2523148148148148" />
@@ -76,8 +76,9 @@
         <entry key="app/src/main/res/layout/item_recycler_mongsmemo.xml" value="0.375" />
         <entry key="app/src/main/res/layout/item_recycler_sharemong.xml" value="0.26625386996904027" />
         <entry key="app/src/main/res/layout/item_recycler_study.xml" value="0.2967592592592593" />
+        <entry key="app/src/main/res/layout/item_recycler_viewpager.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_recyclermemo.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/item_viewpager_cloud.xml" value="0.28379629629629627" />
+        <entry key="app/src/main/res/layout/item_viewpager_cloud.xml" value="0.25" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.32314814814814813" />
       </map>
     </option>
