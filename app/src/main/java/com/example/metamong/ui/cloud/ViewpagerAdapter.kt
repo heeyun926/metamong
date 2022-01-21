@@ -14,7 +14,7 @@ class ViewpagerAdapter constructor(itemView: View) : RecyclerView.ViewHolder(ite
     )
 
     fun bind(viewpagerData: ViewpagerData) {
-        itemView.
+        itemView.d
     }
 
 
