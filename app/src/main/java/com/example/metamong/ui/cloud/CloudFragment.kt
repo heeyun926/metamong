@@ -44,6 +44,7 @@ class CloudFragment : Fragment() {
 
         viewPager.adapter = adapter
         viewPager.setPadding(30, 0, 30, 0)
+        childFragmentManager
 
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
