@@ -1,24 +1,22 @@
 package com.example.metamong.ui.cloud
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.graphics.Insets.add
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.metamong.R
 import com.example.metamong.databinding.FragmentCloudBinding
+import com.example.metamong.fragment.home.SharemongData
+import com.example.metamong.model.LookTalkData
 import com.example.metamong.model.ViewpagerData
 import com.example.metamong.ui.home.SharemongAdapter
 
 class CloudFragment : Fragment() {
     private var _binding: FragmentCloudBinding? = null
     private val binding get() = _binding!!
-    private val viewPager = binding.viewpagerCloud
-    var models: MutableList<String> = mutableListOf()
-    var adapter = context?.let { Adapter(models, it) }
 
 
     override fun onCreateView(
@@ -37,28 +35,53 @@ class CloudFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        models.add("AAAAAA")
-        models.add("BBBBBB")
-        models.add("CCCCCC")
-        models.add("DDDDDD")
+        fun loadData() : MutableList<ViewpagerData> {
+                val list = mutableListOf<ViewpagerData>()
+                with(list) {
+                    add(
+                        ViewpagerData("Android?")
+                    )
+                    add(
+                        ViewpagerData("Androidfdfd?")
+                    )
+                    add(
+                        ViewpagerData("Adsdsdsd")
+                    )
+                }
+            return list
+        }
 
-        viewPager.adapter = adapter
-        viewPager.setPadding(30, 0, 30, 0)
-        childFragmentManager
+        val data: MutableList<ViewpagerData> = loadData()
 
-        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-                super.onPageScrolled(position, positionOffset, positionOffsetPixels)
-            }
+        val viewpagerAdapter = context?.let { Adapter(requireContext()) }
+        viewpagerAdapter?.models = data
 
+
+        binding.viewpagerCloud.adapter = context?.let { Adapter(it) }
+        binding.viewpagerCloud.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        Log.d("ViewPagerFragment","Page${loadData()}")
+        binding.viewpagerCloud.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
-            }
-
-            override fun onPageScrollStateChanged(state: Int) {
-                super.onPageScrollStateChanged(state)
+                Log.d("ViewPagerFragment","Page${position+1}")
             }
         })
+//        viewPager.setPadding(30, 0, 30, 0)
+
+
+//        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+//            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+//                super.onPageScrolled(position, positionOffset, positionOffsetPixels)
+//            }
+//
+//            override fun onPageSelected(position: Int) {
+//                super.onPageSelected(position)
+//            }
+//
+//            override fun onPageScrollStateChanged(state: Int) {
+//                super.onPageScrollStateChanged(state)
+//            }
+//        })
 
     }
 
