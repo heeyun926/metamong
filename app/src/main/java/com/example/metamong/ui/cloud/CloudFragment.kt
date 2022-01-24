@@ -7,12 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
-import com.example.metamong.R
 import com.example.metamong.databinding.FragmentCloudBinding
-import com.example.metamong.fragment.home.SharemongData
-import com.example.metamong.model.LookTalkData
 import com.example.metamong.model.ViewpagerData
-import com.example.metamong.ui.home.SharemongAdapter
 
 class CloudFragment : Fragment() {
     private var _binding: FragmentCloudBinding? = null
@@ -59,7 +55,7 @@ class CloudFragment : Fragment() {
 
         binding.viewpagerCloud.adapter = context?.let { Adapter(it) }
         binding.viewpagerCloud.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-        Log.d("ViewPagerFragment","Page${loadData()}")
+        Log.d("ViewPagerFragment","Page${viewpagerAdapter?.models}")
         binding.viewpagerCloud.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
