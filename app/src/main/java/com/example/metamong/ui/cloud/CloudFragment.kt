@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.metamong.databinding.FragmentCloudBinding
 import com.example.metamong.model.ViewpagerData
+import com.example.metamong.model.ViewpagerRecyclerData
 import com.example.metamong.ui.home.SharemongAdapter
 
 
@@ -29,38 +30,54 @@ class CloudFragment : Fragment() {
         val mBinding = FragmentCloudBinding.inflate(inflater, container, false)
         _binding = mBinding
 
-
+        loadData()
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+    }
 
-        fun loadData() : MutableList<ViewpagerData> {
-            val list23 = mutableListOf("sd","sd","sd")
-            val list21 = mutableListOf("ssdd","sa2d","s32d")
-            val list22 = mutableListOf("s123d","sd23","s123d")
-                val list = mutableListOf<ViewpagerData>()
-                with(list) {
-                    add(ViewpagerData("Android?", mutableListOf("sd","sd","sd")))
-                    add(ViewpagerData("Androidfdfd?",list21))
-                    add(ViewpagerData("Adsdsdsd",list21))
-                }
-            return list
-        }
-
-        val viewpagerAdapter = context?.let { Adapter(requireContext()) }
-        viewpagerAdapter?.models = loadData()
-
-        binding.viewpagerCloud.adapter = viewpagerAdapter
+    private fun loadData() {
+        val itemList = mutableListOf(
+            ViewpagerData(
+                "d", mutableListOf(
+                    ViewpagerRecyclerData("dd"), ViewpagerRecyclerData("dd"),
+                    ViewpagerRecyclerData("dd"), ViewpagerRecyclerData("dd")
+                )
+            ),
+            ViewpagerData(
+                "sd", mutableListOf(
+                    ViewpagerRecyclerData("sddd"), ViewpagerRecyclerData("dd"),
+                    ViewpagerRecyclerData("dd"), ViewpagerRecyclerData("dd")
+                )
+            )
+        )
+        binding.viewpagerCloud.adapter = Adapter(requireContext(), itemList)
         binding.viewpagerCloud.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-        Log.d("ViewPagerFragment","Page${viewpagerAdapter?.models}")
-        binding.viewpagerCloud.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+
+
+        binding.viewpagerCloud.registerOnPageChangeCallback(object :
+            ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
-                Log.d("ViewPagerFragment","Page${position+1}")
+                Log.d("ViewPagerFragment", "Page${position + 1}")
             }
+
         })
+    }
+    override fun onDestroyView() {
+        _binding = null
+        super.onDestroyView()
+    }
+
+
+//        val viewpagerAdapter = context?.let { Adapter(requireContext(),le) }
+//        viewpagerAdapter?.letterList = loadData()
+//
+//        binding.viewpagerCloud.adapter = viewpagerAdapter
+//        binding.viewpagerCloud.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+//        Log.d("ViewPagerFragment","Page${viewpagerAdapter?.letterList}")
 //        viewPager.setPadding(30, 0, 30, 0)
 
 
@@ -78,10 +95,6 @@ class CloudFragment : Fragment() {
 //            }
 //        })
 
-    }
-
-    override fun onDestroyView() {
-        _binding = null
-        super.onDestroyView()
-    }
 }
+
+

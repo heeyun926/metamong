@@ -13,10 +13,11 @@ import com.example.metamong.fragment.home.SharemongData
 import com.example.metamong.model.ViewpagerData
 
 class Adapter(
-    var context: Context
+    var context: Context,
+    val letterList : MutableList<ViewpagerData>
 ) : RecyclerView.Adapter<Adapter.AdapterViewHolder>() {
-    var models = mutableListOf<ViewpagerData>()
-    override fun getItemCount(): Int = models.size
+
+    override fun getItemCount(): Int = letterList.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterViewHolder {
         val binding = ItemViewpagerCloudBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -25,7 +26,7 @@ class Adapter(
 
     override fun onBindViewHolder(holder: AdapterViewHolder, position: Int) {
 
-        val item = models[position]
+        val item = letterList[position]
         holder.bind(item)
 
     }
@@ -35,14 +36,12 @@ class Adapter(
     inner class AdapterViewHolder(val binding: ItemViewpagerCloudBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        val list = mutableListOf<ViewpagerData>()
-
-
         fun bind(data: ViewpagerData) {
             binding.title.text = data.text
-            val adapter = ViewpagerRecyclerAdapter()
-            adapter.letter = list.view
-            binding.recyclerView.adapter = adapter
+            binding.recyclerView.adapter = ViewpagerRecyclerAdapter(context, data.viewpagerList)
+//            val adapter = ViewpagerRecyclerAdapter()
+//            adapter.letter = list.view
+//            binding.recyclerView.adapter = adapter
 
         }
     }

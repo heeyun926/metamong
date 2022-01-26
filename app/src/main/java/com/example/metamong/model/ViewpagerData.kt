@@ -5,5 +5,8 @@ import android.os.Parcelable
 
 data class ViewpagerData (
     val text: String,
-    val viewpagerList: MutableList<String>
+    val viewpagerList: MutableList<ViewpagerRecyclerData>
     )
+data class ViewpagerRecyclerData(
+    val text: String
+)
