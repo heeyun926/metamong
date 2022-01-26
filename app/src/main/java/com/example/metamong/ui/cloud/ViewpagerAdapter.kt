@@ -30,11 +30,20 @@ class Adapter(
 
     }
 
+
+
     inner class AdapterViewHolder(val binding: ItemViewpagerCloudBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        val list = mutableListOf<ViewpagerData>()
+
+
         fun bind(data: ViewpagerData) {
             binding.title.text = data.text
+            val adapter = ViewpagerRecyclerAdapter()
+            adapter.letter = list.view
+            binding.recyclerView.adapter = adapter
+
         }
     }
 }
