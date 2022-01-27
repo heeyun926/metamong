@@ -113,9 +113,11 @@ class HomeFragment : Fragment() {
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerSharemong.adapter = SharemongAdapter()
 
+
+
         binding.lookTalkrecycler.layoutManager =
-            LinearLayoutManager(context, GridLayoutManager.HORIZONTAL, false)
-        binding.lookTalkrecycler.adapter = SharemongAdapter()
+            GridLayoutManager(context,2)
+        binding.lookTalkrecycler.adapter = LookTalkAdapter()
 
 
         return binding.root
@@ -130,13 +132,19 @@ class HomeFragment : Fragment() {
 //            }
         val data: MutableList<SharemongData> = loadData()
         val data2: MutableList<LookTalkData> = loadData2()
+
         val sharemongAdapter = context?.let { SharemongAdapter() }
         sharemongAdapter?.sharemong = data
         //sharemongAdapter?.sharemong = data2
         Log.d("TAGhome", "onViewCreated: ${sharemongAdapter?.sharemong}")
 
+        val looktalkAdapter = context?.let { LookTalkAdapter() }
+        looktalkAdapter?.lookTalkList = data2
+
+        Log.d("TAGhome", "onViewCreated: ${sharemongAdapter?.sharemong}")
+
         binding.recyclerSharemong.adapter = sharemongAdapter
-        binding.lookTalkrecycler.adapter = sharemongAdapter
+        binding.lookTalkrecycler.adapter = looktalkAdapter
 
 
     }
