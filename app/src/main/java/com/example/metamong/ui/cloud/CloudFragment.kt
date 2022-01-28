@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.metamong.databinding.FragmentCloudBinding
+import com.example.metamong.model.LookTalkData
+import com.example.metamong.model.StudyData
 import com.example.metamong.model.ViewpagerData
 import com.example.metamong.model.ViewpagerRecyclerData
 import com.example.metamong.ui.home.SharemongAdapter
@@ -53,6 +55,9 @@ class CloudFragment : Fragment() {
                 )
             )
         )
+
+
+
         binding.viewpagerCloud.adapter = Adapter(requireContext(), itemList)
         binding.viewpagerCloud.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
@@ -66,6 +71,19 @@ class CloudFragment : Fragment() {
 
         })
     }
+
+    private fun loadData2(): MutableList<StudyData> {
+        val studyList = mutableListOf<StudyData>()
+        with(studyList) {
+            add(
+                StudyData(
+
+                )
+            )
+        }
+        return studyList
+    }
+
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()

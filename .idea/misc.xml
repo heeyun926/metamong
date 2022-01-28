@@ -47,13 +47,12 @@
         <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/fragment_mongs_memo_add.xml" value="0.1402439024390244" />
         <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/fragment_mongs_memo_detail.xml" value="0.32546296296296295" />
         <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/fragment_mypage.xml" value="0.22" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/item_metamongresult.xml" value="0.3111111111111111" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/item_recycler_mission_ing.xml" value="0.1638888888888889" />
         <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/item_recycler_viewpager.xml" value="0.2064814814814815" />
         <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/item_recyclermemo.xml" value="0.18194444444444444" />
         <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/item_viewpager_cloud.xml" value="0.2064814814814815" />
         <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/spinner_bg.xml" value="0.25" />
-        <entry key="..\:/Users/gpc/metamongq/app/src/main/res/layout/spinner_text.xml" value="0.1638888888888889" />
+        <entry key="app/src/main/res/drawable/bg_cloudstudy_bg.xml" value="0.158" />
+        <entry key="app/src/main/res/drawable/ic_activate_record.xml" value="0.158" />
         <entry key="app/src/main/res/drawable/ic_btn_back.xml" value="0.43072916666666666" />
         <entry key="app/src/main/res/drawable/ic_btn_select_01.xml" value="0.43072916666666666" />
         <entry key="app/src/main/res/drawable/ic_chat.xml" value="0.25416666666666665" />
@@ -79,7 +78,7 @@
         <entry key="app/src/main/res/layout/activity_mongs_add.xml" value="0.26145833333333335" />
         <entry key="app/src/main/res/layout/activity_result.xml" value="0.2832080200501253" />
         <entry key="app/src/main/res/layout/activity_result_datail.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/fragment_cloud.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/fragment_cloud.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_cloud2.xml" value="0.45555555555555555" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_memo.xml" value="0.2523148148148148" />
@@ -92,7 +91,10 @@
         <entry key="app/src/main/res/layout/item_recycler_mission_ing.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_recycler_mongsmemo.xml" value="0.375" />
         <entry key="app/src/main/res/layout/item_recycler_sharemong.xml" value="0.26625386996904027" />
+        <entry key="app/src/main/res/layout/item_recycler_study.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/item_recycler_viewpager.xml" value="0.4973958333333333" />
         <entry key="app/src/main/res/layout/item_recyclermemo.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/item_viewpager_cloud.xml" value="0.4973958333333333" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.32314814814814813" />
       </map>
     </option>
