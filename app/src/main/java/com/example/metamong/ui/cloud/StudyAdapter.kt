@@ -7,7 +7,7 @@ import com.example.metamong.databinding.ItemRecyclerStudyBinding
 import com.example.metamong.model.StudyData
 
 class StudyAdapter : RecyclerView.Adapter<StudyAdapter.Holder>() {
-    val studyList = mutableListOf<StudyData>()
+    var studyList = mutableListOf<StudyData>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudyAdapter.Holder {
         val binding = ItemRecyclerStudyBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return Holder(binding)

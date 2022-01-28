@@ -1,6 +1,5 @@
 package com.example.metamong.ui.cloud
 
-import android.R
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,6 +9,7 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
+import com.example.metamong.R
 import com.example.metamong.databinding.FragmentCloudBinding
 import com.example.metamong.model.LookTalkData
 import com.example.metamong.model.StudyData
@@ -56,8 +56,6 @@ class CloudFragment : Fragment() {
             )
         )
 
-
-
         binding.viewpagerCloud.adapter = Adapter(requireContext(), itemList)
         binding.viewpagerCloud.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
@@ -70,6 +68,15 @@ class CloudFragment : Fragment() {
             }
 
         })
+
+        binding.recyclerStudy.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.recyclerStudy.adapter = StudyAdapter()
+
+        val study: MutableList<StudyData> = loadData2()
+        val studyAdapter = StudyAdapter()
+        studyAdapter.studyList = study
+        binding.recyclerStudy.adapter = studyAdapter
     }
 
     private fun loadData2(): MutableList<StudyData> {
@@ -77,7 +84,23 @@ class CloudFragment : Fragment() {
         with(studyList) {
             add(
                 StudyData(
-
+                    R.drawable.bg_cloudstudy_bg,
+                    R.drawable.study_1,
+                    "App Study"
+                )
+            )
+            add(
+                StudyData(
+                    R.drawable.bg_cloudstudy_bg,
+                    R.drawable.study_1,
+                    "App Study"
+                )
+            )
+            add(
+                StudyData(
+                    R.drawable.bg_cloudstudy_bg,
+                    R.drawable.study_1,
+                    "App Study"
                 )
             )
         }
@@ -88,31 +111,8 @@ class CloudFragment : Fragment() {
         _binding = null
         super.onDestroyView()
     }
-
-
-//        val viewpagerAdapter = context?.let { Adapter(requireContext(),le) }
-//        viewpagerAdapter?.letterList = loadData()
-//
-//        binding.viewpagerCloud.adapter = viewpagerAdapter
-//        binding.viewpagerCloud.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-//        Log.d("ViewPagerFragment","Page${viewpagerAdapter?.letterList}")
-//        viewPager.setPadding(30, 0, 30, 0)
-
-
-//        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-//            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-//                super.onPageScrolled(position, positionOffset, positionOffsetPixels)
-//            }
-//
-//            override fun onPageSelected(position: Int) {
-//                super.onPageSelected(position)
-//            }
-//
-//            override fun onPageScrollStateChanged(state: Int) {
-//                super.onPageScrollStateChanged(state)
-//            }
-//        })
-
 }
+
+
 
 
